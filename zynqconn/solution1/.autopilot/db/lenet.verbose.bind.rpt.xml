@@ -1,0 +1,108 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'lenet'" level="0">
+<item name = "Date">Fri May 24 00:15:50 2019
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">zynqconn</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 8.690, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_forward_3_fu_1821">forward_3, ?, ?, ?, ?, none</column>
+<column name="grp_forward_2_fu_1831">forward_2, ?, ?, ?, ?, none</column>
+<column name="grp_forward_fu_1841">forward, ?, ?, ?, ?, none</column>
+<column name="grp_forward_4_fu_1849">forward_4, 217479, 217479, 217479, 217479, none</column>
+<column name="grp_forward_1_fu_1859">forward_1, ?, ?, ?, ?, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop 1">1024, 1024, 1, -, -, 1024, no</column>
+<column name="- Loop 2">4704, 4704, 1, -, -, 4704, no</column>
+<column name="- Loop 3">161, 161, 27, -, -, 6, no</column>
+<column name=" + Loop 3.1">25, 25, 1, -, -, 25, no</column>
+<column name="- Loop 4">1024, 1024, 1, -, -, 1024, no</column>
+<column name="- Loop 5">4704, 4704, 1, -, -, 4704, no</column>
+<column name="- Loop 6">4704, 4704, 1, -, -, 4704, no</column>
+<column name="- Loop 7">168, 168, 28, -, -, 6, no</column>
+<column name=" + Loop 7.1">25, 25, 1, -, -, 25, no</column>
+<column name="- Loop 8">4704, 4704, 1, -, -, 4704, no</column>
+<column name="- Loop 9">1176, 1176, 1, -, -, 1176, no</column>
+<column name="- Loop 10">1176, 1176, 1, -, -, 1176, no</column>
+<column name="- Loop 11">1176, 1176, 1, -, -, 1176, no</column>
+<column name="- Loop 12">1176, 1176, 1, -, -, 1176, no</column>
+<column name="- Loop 13">1600, 1600, 1, -, -, 1600, no</column>
+<column name="- Loop 14">2431, 2431, 152, -, -, 16, no</column>
+<column name=" + Loop 14.1">150, 150, 1, -, -, 150, no</column>
+<column name="- Loop 15">1176, 1176, 1, -, -, 1176, no</column>
+<column name="- Loop 16">1600, 1600, 1, -, -, 1600, no</column>
+<column name="- Loop 17">1600, 1600, 1, -, -, 1600, no</column>
+<column name="- Loop 18">2448, 2448, 153, -, -, 16, no</column>
+<column name=" + Loop 18.1">150, 150, 1, -, -, 150, no</column>
+<column name="- Loop 19">1600, 1600, 1, -, -, 1600, no</column>
+<column name="- Loop 20">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 21">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 22">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 23">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 24">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 25">48239, 48239, 402, -, -, 120, no</column>
+<column name=" + Loop 25.1">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 26">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 27">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 28">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 29">48480, 48480, 404, -, -, 120, no</column>
+<column name=" + Loop 29.1">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 30">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 31">10, 10, 1, -, -, 10, no</column>
+<column name="- Loop 32">1219, 1219, 122, -, -, 10, no</column>
+<column name=" + Loop 32.1">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 33">1230, 1230, 123, -, -, 10, no</column>
+<column name=" + Loop 33.1">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 34">1024, 1024, 1, -, -, 1024, no</column>
+<column name="- Loop 35">162, 162, 27, -, -, 6, no</column>
+<column name=" + Loop 35.1">25, 25, 1, -, -, 25, no</column>
+<column name="- Loop 36">2432, 2432, 152, -, -, 16, no</column>
+<column name=" + Loop 36.1">150, 150, 1, -, -, 150, no</column>
+<column name="- Loop 37">48240, 48240, 402, -, -, 120, no</column>
+<column name=" + Loop 37.1">400, 400, 1, -, -, 400, no</column>
+<column name="- Loop 38">1220, 1220, 122, -, -, 10, no</column>
+<column name=" + Loop 38.1">120, 120, 1, -, -, 120, no</column>
+<column name="- Loop 39">9408, 9408, 2, -, -, 4704, no</column>
+<column name="- Loop 40">2352, 2352, 2, -, -, 1176, no</column>
+<column name="- Loop 41">3200, 3200, 2, -, -, 1600, no</column>
+<column name="- Loop 42">800, 800, 2, -, -, 400, no</column>
+<column name="- Loop 43">240, 240, 2, -, -, 120, no</column>
+<column name="- Loop 44">3620, 3620, 362, -, -, 10, no</column>
+<column name=" + Loop 44.1">360, 360, 3, -, -, 120, no</column>
+<column name="- Loop 45">30, 30, 3, -, -, 10, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

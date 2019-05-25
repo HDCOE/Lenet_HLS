@@ -1,0 +1,1261 @@
+
+
+================================================================
+== Vivado HLS Report for 'forward_4'
+================================================================
+* Date:           Fri May 24 00:15:58 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        zynqconn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     7.261|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +--------+--------+--------+--------+---------+
+    |     Latency     |     Interval    | Pipeline|
+    |   min  |   max  |   min  |   max  |   Type  |
+    +--------+--------+--------+--------+---------+
+    |  217479|  217479|  217479|  217479|   none  |
+    +--------+--------+--------+--------+---------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+----------------+--------+--------+--------+--------+---------+
+        |                           |                |     Latency     |     Interval    | Pipeline|
+        |          Instance         |     Module     |   min  |   max  |   min  |   max  |   Type  |
+        +---------------------------+----------------+--------+--------+--------+--------+---------+
+        |grp_forward_conv_2_fu_129  |forward_conv_2  |  216755|  216755|  216755|  216755|   none  |
+        +---------------------------+----------------+--------+--------+--------+--------+---------+
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  240|  240|         2|          -|          -|   120|    no    |
+        |- Loop 2  |  240|  240|         2|          -|          -|   120|    no    |
+        |- Loop 3  |  240|  240|         2|          -|          -|   120|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|     93|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      1|     344|    814|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|    167|
+|Register         |        -|      -|      72|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      1|     416|   1074|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|   ~0  |   ~0   |      2|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+----------------+---------+-------+-----+-----+
+    |          Instance         |     Module     | BRAM_18K| DSP48E|  FF | LUT |
+    +---------------------------+----------------+---------+-------+-----+-----+
+    |grp_forward_conv_2_fu_129  |forward_conv_2  |        0|      1|  344|  814|
+    +---------------------------+----------------+---------+-------+-----+-----+
+    |Total                      |                |        0|      1|  344|  814|
+    +---------------------------+----------------+---------+-------+-----+-----+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+    |                    Variable Name                   | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+    |iz_0_i_fu_164_p2                                    |     +    |      0|  0|  15|           7|           1|
+    |p_i0_5_fu_207_p2                                    |     +    |      0|  0|  15|           7|           1|
+    |p_i0_fu_152_p2                                      |     +    |      0|  0|  15|           7|           1|
+    |exitcond_0_i_fu_158_p2                              |   icmp   |      0|  0|  11|           7|           5|
+    |tmp_fu_146_p2                                       |   icmp   |      0|  0|  11|           7|           5|
+    |tmp_s_fu_201_p2                                     |   icmp   |      0|  0|  11|           7|           5|
+    |conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_d0  |  select  |      0|  0|  15|           1|           1|
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                                               |          |      0|  0|  93|          43|          19|
+    +----------------------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------------------------+----+-----------+-----+-----------+
+    |                           Name                           | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                                                 |  44|          9|    1|          9|
+    |conv_layer_5_120_1_0_5_5_16_output_data_V_address0        |  21|          4|    7|         28|
+    |conv_layer_5_120_1_0_5_5_16_output_data_V_ce0             |  15|          3|    1|          3|
+    |conv_layer_5_120_1_0_5_5_16_output_data_V_d0              |  15|          3|   16|         48|
+    |conv_layer_5_120_1_0_5_5_16_output_data_V_we0             |  15|          3|    1|          3|
+    |conv_layer_5_120_1_0_5_5_16_relu1_input_data_V_address0   |  15|          3|    7|         21|
+    |conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_address0  |  15|          3|    7|         21|
+    |p_i0_0_i1_reg_118                                         |   9|          2|    7|         14|
+    |p_i0_0_i_reg_96                                           |   9|          2|    7|         14|
+    |p_z_assign_0_i_reg_107                                    |   9|          2|    7|         14|
+    +----------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                     | 167|         34|   61|        175|
+    +----------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+---+----+-----+-----------+
+    |                  Name                  | FF| LUT| Bits| Const Bits|
+    +----------------------------------------+---+----+-----+-----------+
+    |ap_CS_fsm                               |  8|   0|    8|          0|
+    |grp_forward_conv_2_fu_129_ap_start_reg  |  1|   0|    1|          0|
+    |iz_0_i_reg_239                          |  7|   0|    7|          0|
+    |p_i0_0_i1_cast1_reg_254                 |  7|   0|   64|         57|
+    |p_i0_0_i1_reg_118                       |  7|   0|    7|          0|
+    |p_i0_0_i_cast3_reg_218                  |  7|   0|   64|         57|
+    |p_i0_0_i_reg_96                         |  7|   0|    7|          0|
+    |p_i0_5_reg_262                          |  7|   0|    7|          0|
+    |p_i0_reg_226                            |  7|   0|    7|          0|
+    |p_z_assign_0_i_reg_107                  |  7|   0|    7|          0|
+    |tmp_10_0_i_reg_244                      |  7|   0|   64|         57|
+    +----------------------------------------+---+----+-----+-----------+
+    |Total                                   | 72|   0|  243|        171|
+    +----------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------------------------------------------+-----+-----+------------+-------------------------------------------------+--------------+
+|                         RTL Ports                        | Dir | Bits|  Protocol  |                  Source Object                  |    C Type    |
++----------------------------------------------------------+-----+-----+------------+-------------------------------------------------+--------------+
+|ap_clk                                                    |  in |    1| ap_ctrl_hs |                    forward.4                    | return value |
+|ap_rst                                                    |  in |    1| ap_ctrl_hs |                    forward.4                    | return value |
+|ap_start                                                  |  in |    1| ap_ctrl_hs |                    forward.4                    | return value |
+|ap_done                                                   | out |    1| ap_ctrl_hs |                    forward.4                    | return value |
+|ap_idle                                                   | out |    1| ap_ctrl_hs |                    forward.4                    | return value |
+|ap_ready                                                  | out |    1| ap_ctrl_hs |                    forward.4                    | return value |
+|conv_layer_5_120_1_0_5_5_16_input_data_V_address0         | out |    9|  ap_memory |     conv_layer_5_120_1_0_5_5_16_input_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_input_data_V_ce0              | out |    1|  ap_memory |     conv_layer_5_120_1_0_5_5_16_input_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_input_data_V_q0               |  in |   16|  ap_memory |     conv_layer_5_120_1_0_5_5_16_input_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_output_data_V_address0        | out |    7|  ap_memory |    conv_layer_5_120_1_0_5_5_16_output_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_output_data_V_ce0             | out |    1|  ap_memory |    conv_layer_5_120_1_0_5_5_16_output_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_output_data_V_we0             | out |    1|  ap_memory |    conv_layer_5_120_1_0_5_5_16_output_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_output_data_V_d0              | out |   16|  ap_memory |    conv_layer_5_120_1_0_5_5_16_output_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_output_data_V_q0              |  in |   16|  ap_memory |    conv_layer_5_120_1_0_5_5_16_output_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_W_data_V_address0             | out |   16|  ap_memory |       conv_layer_5_120_1_0_5_5_16_W_data_V      |     array    |
+|conv_layer_5_120_1_0_5_5_16_W_data_V_ce0                  | out |    1|  ap_memory |       conv_layer_5_120_1_0_5_5_16_W_data_V      |     array    |
+|conv_layer_5_120_1_0_5_5_16_W_data_V_q0                   |  in |   16|  ap_memory |       conv_layer_5_120_1_0_5_5_16_W_data_V      |     array    |
+|conv_layer_5_120_1_0_5_5_16_inpad_data_V_address0         | out |    9|  ap_memory |     conv_layer_5_120_1_0_5_5_16_inpad_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_inpad_data_V_ce0              | out |    1|  ap_memory |     conv_layer_5_120_1_0_5_5_16_inpad_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_inpad_data_V_we0              | out |    1|  ap_memory |     conv_layer_5_120_1_0_5_5_16_inpad_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_inpad_data_V_d0               | out |   16|  ap_memory |     conv_layer_5_120_1_0_5_5_16_inpad_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_inpad_data_V_q0               |  in |   16|  ap_memory |     conv_layer_5_120_1_0_5_5_16_inpad_data_V    |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_input_data_V_address0   | out |    7|  ap_memory |  conv_layer_5_120_1_0_5_5_16_relu1_input_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_input_data_V_ce0        | out |    1|  ap_memory |  conv_layer_5_120_1_0_5_5_16_relu1_input_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_input_data_V_we0        | out |    1|  ap_memory |  conv_layer_5_120_1_0_5_5_16_relu1_input_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_input_data_V_d0         | out |   16|  ap_memory |  conv_layer_5_120_1_0_5_5_16_relu1_input_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_input_data_V_q0         |  in |   16|  ap_memory |  conv_layer_5_120_1_0_5_5_16_relu1_input_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_address0  | out |    7|  ap_memory | conv_layer_5_120_1_0_5_5_16_relu1_output_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_ce0       | out |    1|  ap_memory | conv_layer_5_120_1_0_5_5_16_relu1_output_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_we0       | out |    1|  ap_memory | conv_layer_5_120_1_0_5_5_16_relu1_output_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_d0        | out |   15|  ap_memory | conv_layer_5_120_1_0_5_5_16_relu1_output_data_V |     array    |
+|conv_layer_5_120_1_0_5_5_16_relu1_output_data_V_q0        |  in |   15|  ap_memory | conv_layer_5_120_1_0_5_5_16_relu1_output_data_V |     array    |
++----------------------------------------------------------+-----+-----+------------+-------------------------------------------------+--------------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 2
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (!tmp)
+	5  / (tmp)
+4 --> 
+	3  / true
+5 --> 
+	6  / (!exitcond_0_i)
+	7  / (exitcond_0_i)
+6 --> 
+	5  / true
+7 --> 
+	8  / (!tmp_s)
+8 --> 
+	7  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 9 [2/2] (0.00ns)   --->   "call fastcc void @forward_conv.2([400 x i16]* %conv_layer_5_120_1_0_5_5_16_input_data_V, [120 x i16]* %conv_layer_5_120_1_0_5_5_16_output_data_V, [48000 x i16]* %conv_layer_5_120_1_0_5_5_16_W_data_V, [400 x i16]* %conv_layer_5_120_1_0_5_5_16_inpad_data_V)" [zynqconn/CONV_layer.h:51]   --->   Operation 9 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 10 [1/2] (0.00ns)   --->   "call fastcc void @forward_conv.2([400 x i16]* %conv_layer_5_120_1_0_5_5_16_input_data_V, [120 x i16]* %conv_layer_5_120_1_0_5_5_16_output_data_V, [48000 x i16]* %conv_layer_5_120_1_0_5_5_16_W_data_V, [400 x i16]* %conv_layer_5_120_1_0_5_5_16_inpad_data_V)" [zynqconn/CONV_layer.h:51]   --->   Operation 10 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 11 [1/1] (1.76ns)   --->   "br label %1" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 11 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 12 [1/1] (0.00ns)   --->   "%p_i0_0_i = phi i7 [ 0, %0 ], [ %p_i0, %2 ]"   --->   Operation 12 'phi' 'p_i0_0_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%p_i0_0_i_cast3 = zext i7 %p_i0_0_i to i64" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 13 'zext' 'p_i0_0_i_cast3' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/1] (1.48ns)   --->   "%tmp = icmp eq i7 %p_i0_0_i, -8" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 14 'icmp' 'tmp' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 120, i64 120, i64 120)"   --->   Operation 15 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (1.87ns)   --->   "%p_i0 = add i7 %p_i0_0_i, 1" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 16 'add' 'p_i0' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "br i1 %tmp, label %.preheader.0.0.i.preheader, label %2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%conv_layer_output_d = getelementptr [120 x i16]* %conv_layer_5_120_1_0_5_5_16_output_data_V, i64 0, i64 %p_i0_0_i_cast3" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 18 'getelementptr' 'conv_layer_output_d' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 19 [2/2] (3.25ns)   --->   "%conv_layer_output_d_1 = load i16* %conv_layer_output_d, align 2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 19 'load' 'conv_layer_output_d_1' <Predicate = (!tmp)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_3 : Operation 20 [1/1] (1.76ns)   --->   "br label %.preheader.0.0.i" [zynqconn/RELU_layer.h:22->zynqconn/CONV_layer.h:53]   --->   Operation 20 'br' <Predicate = (tmp)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 6.50>
+ST_4 : Operation 21 [1/2] (3.25ns)   --->   "%conv_layer_output_d_1 = load i16* %conv_layer_output_d, align 2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 21 'load' 'conv_layer_output_d_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%conv_layer_relu1_inp = getelementptr [120 x i16]* %conv_layer_5_120_1_0_5_5_16_relu1_input_data_V, i64 0, i64 %p_i0_0_i_cast3" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 22 'getelementptr' 'conv_layer_relu1_inp' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 23 [1/1] (3.25ns)   --->   "store i16 %conv_layer_output_d_1, i16* %conv_layer_relu1_inp, align 2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 23 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "br label %1" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:52]   --->   Operation 24 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 3.25>
+ST_5 : Operation 25 [1/1] (0.00ns)   --->   "%p_z_assign_0_i = phi i7 [ %iz_0_i, %_ZltILi16ELi4ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbRK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EEi.exit.0.0.i ], [ 0, %.preheader.0.0.i.preheader ]" [zynqconn/RELU_layer.h:22->zynqconn/CONV_layer.h:53]   --->   Operation 25 'phi' 'p_z_assign_0_i' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 26 [1/1] (1.48ns)   --->   "%exitcond_0_i = icmp eq i7 %p_z_assign_0_i, -8" [zynqconn/RELU_layer.h:22->zynqconn/CONV_layer.h:53]   --->   Operation 26 'icmp' 'exitcond_0_i' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 27 [1/1] (0.00ns)   --->   "%empty_81 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 120, i64 120, i64 120)"   --->   Operation 27 'speclooptripcount' 'empty_81' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 28 [1/1] (1.87ns)   --->   "%iz_0_i = add i7 %p_z_assign_0_i, 1" [zynqconn/RELU_layer.h:22->zynqconn/CONV_layer.h:53]   --->   Operation 28 'add' 'iz_0_i' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 29 [1/1] (0.00ns)   --->   "br i1 %exitcond_0_i, label %forward.exit.preheader, label %_ZltILi16ELi4ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbRK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EEi.exit.0.0.i" [zynqconn/RELU_layer.h:22->zynqconn/CONV_layer.h:53]   --->   Operation 29 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_10_0_i = zext i7 %p_z_assign_0_i to i64" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/CONV_layer.h:53]   --->   Operation 30 'zext' 'tmp_10_0_i' <Predicate = (!exitcond_0_i)> <Delay = 0.00>
+ST_5 : Operation 31 [1/1] (0.00ns)   --->   "%conv_layer_relu1_inp_1 = getelementptr [120 x i16]* %conv_layer_5_120_1_0_5_5_16_relu1_input_data_V, i64 0, i64 %tmp_10_0_i" [zynqconn/RELU_layer.h:24->zynqconn/CONV_layer.h:53]   --->   Operation 31 'getelementptr' 'conv_layer_relu1_inp_1' <Predicate = (!exitcond_0_i)> <Delay = 0.00>
+ST_5 : Operation 32 [2/2] (3.25ns)   --->   "%conv_layer_relu1_inp_2 = load i16* %conv_layer_relu1_inp_1, align 2" [zynqconn/RELU_layer.h:24->zynqconn/CONV_layer.h:53]   --->   Operation 32 'load' 'conv_layer_relu1_inp_2' <Predicate = (!exitcond_0_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_5 : Operation 33 [1/1] (1.76ns)   --->   "br label %forward.exit" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 33 'br' <Predicate = (exitcond_0_i)> <Delay = 1.76>
+
+State 6 <SV = 4> <Delay = 7.26>
+ST_6 : Operation 34 [1/2] (3.25ns)   --->   "%conv_layer_relu1_inp_2 = load i16* %conv_layer_relu1_inp_1, align 2" [zynqconn/RELU_layer.h:24->zynqconn/CONV_layer.h:53]   --->   Operation 34 'load' 'conv_layer_relu1_inp_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_71 = trunc i16 %conv_layer_relu1_inp_2 to i15" [zynqconn/RELU_layer.h:26->zynqconn/CONV_layer.h:53]   --->   Operation 35 'trunc' 'tmp_71' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_72 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %conv_layer_relu1_inp_2, i32 15)" [zynqconn/RELU_layer.h:26->zynqconn/CONV_layer.h:53]   --->   Operation 36 'bitselect' 'tmp_72' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (0.00ns)   --->   "%conv_layer_relu1_out = getelementptr [120 x i15]* %conv_layer_5_120_1_0_5_5_16_relu1_output_data_V, i64 0, i64 %tmp_10_0_i" [zynqconn/RELU_layer.h:27->zynqconn/CONV_layer.h:53]   --->   Operation 37 'getelementptr' 'conv_layer_relu1_out' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 38 [1/1] (0.75ns)   --->   "%storemerge_0_i = select i1 %tmp_72, i15 0, i15 %tmp_71" [zynqconn/RELU_layer.h:26->zynqconn/CONV_layer.h:53]   --->   Operation 38 'select' 'storemerge_0_i' <Predicate = true> <Delay = 0.75> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 39 [1/1] (3.25ns)   --->   "store i15 %storemerge_0_i, i15* %conv_layer_relu1_out, align 2" [zynqconn/RELU_layer.h:27->zynqconn/CONV_layer.h:53]   --->   Operation 39 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "br label %.preheader.0.0.i" [zynqconn/RELU_layer.h:22->zynqconn/CONV_layer.h:53]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+
+State 7 <SV = 4> <Delay = 3.25>
+ST_7 : Operation 41 [1/1] (0.00ns)   --->   "%p_i0_0_i1 = phi i7 [ %p_i0_5, %3 ], [ 0, %forward.exit.preheader ]"   --->   Operation 41 'phi' 'p_i0_0_i1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 42 [1/1] (0.00ns)   --->   "%p_i0_0_i1_cast1 = zext i7 %p_i0_0_i1 to i64" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 42 'zext' 'p_i0_0_i1_cast1' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 43 [1/1] (1.48ns)   --->   "%tmp_s = icmp eq i7 %p_i0_0_i1, -8" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 43 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.48> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.48> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 44 [1/1] (0.00ns)   --->   "%empty_82 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 120, i64 120, i64 120)"   --->   Operation 44 'speclooptripcount' 'empty_82' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 45 [1/1] (1.87ns)   --->   "%p_i0_5 = add i7 %p_i0_0_i1, 1" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 45 'add' 'p_i0_5' <Predicate = true> <Delay = 1.87> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %"operator=.exit2", label %3" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 47 [1/1] (0.00ns)   --->   "%conv_layer_relu1_out_1 = getelementptr [120 x i15]* %conv_layer_5_120_1_0_5_5_16_relu1_output_data_V, i64 0, i64 %p_i0_0_i1_cast1" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 47 'getelementptr' 'conv_layer_relu1_out_1' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_7 : Operation 48 [2/2] (3.25ns)   --->   "%conv_layer_relu1_out_2 = load i15* %conv_layer_relu1_out_1, align 2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 48 'load' 'conv_layer_relu1_out_2' <Predicate = (!tmp_s)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_7 : Operation 49 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 49 'ret' <Predicate = (tmp_s)> <Delay = 0.00>
+
+State 8 <SV = 5> <Delay = 6.50>
+ST_8 : Operation 50 [1/2] (3.25ns)   --->   "%conv_layer_relu1_out_2 = load i15* %conv_layer_relu1_out_1, align 2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 50 'load' 'conv_layer_relu1_out_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_8 : Operation 51 [1/1] (0.00ns)   --->   "%extLd = zext i15 %conv_layer_relu1_out_2 to i16" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 51 'zext' 'extLd' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 52 [1/1] (0.00ns)   --->   "%conv_layer_output_d_2 = getelementptr [120 x i16]* %conv_layer_5_120_1_0_5_5_16_output_data_V, i64 0, i64 %p_i0_0_i1_cast1" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 52 'getelementptr' 'conv_layer_output_d_2' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 53 [1/1] (3.25ns)   --->   "store i16 %extLd, i16* %conv_layer_output_d_2, align 2" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 53 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1200> <RAM>
+ST_8 : Operation 54 [1/1] (0.00ns)   --->   "br label %forward.exit" [zynqconn/Tensor.h:15->zynqconn/CONV_layer.h:54]   --->   Operation 54 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ conv_layer_5_120_1_0_5_5_16_input_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ conv_layer_5_120_1_0_5_5_16_output_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ conv_layer_5_120_1_0_5_5_16_W_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
+Port [ conv_layer_5_120_1_0_5_5_16_inpad_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ conv_layer_5_120_1_0_5_5_16_relu1_input_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+Port [ conv_layer_5_120_1_0_5_5_16_relu1_output_data_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[23]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+StgValue_10            (call             ) [ 000000000]
+StgValue_11            (br               ) [ 001110000]
+p_i0_0_i               (phi              ) [ 000100000]
+p_i0_0_i_cast3         (zext             ) [ 000010000]
+tmp                    (icmp             ) [ 000110000]
+empty                  (speclooptripcount) [ 000000000]
+p_i0                   (add              ) [ 001110000]
+StgValue_17            (br               ) [ 000000000]
+conv_layer_output_d    (getelementptr    ) [ 000010000]
+StgValue_20            (br               ) [ 000111100]
+conv_layer_output_d_1  (load             ) [ 000000000]
+conv_layer_relu1_inp   (getelementptr    ) [ 000000000]
+StgValue_23            (store            ) [ 000000000]
+StgValue_24            (br               ) [ 001110000]
+p_z_assign_0_i         (phi              ) [ 000001000]
+exitcond_0_i           (icmp             ) [ 000001100]
+empty_81               (speclooptripcount) [ 000000000]
+iz_0_i                 (add              ) [ 000101100]
+StgValue_29            (br               ) [ 000000000]
+tmp_10_0_i             (zext             ) [ 000000100]
+conv_layer_relu1_inp_1 (getelementptr    ) [ 000000100]
+StgValue_33            (br               ) [ 000001111]
+conv_layer_relu1_inp_2 (load             ) [ 000000000]
+tmp_71                 (trunc            ) [ 000000000]
+tmp_72                 (bitselect        ) [ 000000000]
+conv_layer_relu1_out   (getelementptr    ) [ 000000000]
+storemerge_0_i         (select           ) [ 000000000]
+StgValue_39            (store            ) [ 000000000]
+StgValue_40            (br               ) [ 000101100]
+p_i0_0_i1              (phi              ) [ 000000010]
+p_i0_0_i1_cast1        (zext             ) [ 000000001]
+tmp_s                  (icmp             ) [ 000000011]
+empty_82               (speclooptripcount) [ 000000000]
+p_i0_5                 (add              ) [ 000001011]
+StgValue_46            (br               ) [ 000000000]
+conv_layer_relu1_out_1 (getelementptr    ) [ 000000001]
+StgValue_49            (ret              ) [ 000000000]
+conv_layer_relu1_out_2 (load             ) [ 000000000]
+extLd                  (zext             ) [ 000000000]
+conv_layer_output_d_2  (getelementptr    ) [ 000000000]
+StgValue_53            (store            ) [ 000000000]
+StgValue_54            (br               ) [ 000001011]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="conv_layer_5_120_1_0_5_5_16_input_data_V">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv_layer_5_120_1_0_5_5_16_input_data_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="conv_layer_5_120_1_0_5_5_16_output_data_V">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv_layer_5_120_1_0_5_5_16_output_data_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="conv_layer_5_120_1_0_5_5_16_W_data_V">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv_layer_5_120_1_0_5_5_16_W_data_V"/><MemPortTyVec>1 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="conv_layer_5_120_1_0_5_5_16_inpad_data_V">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv_layer_5_120_1_0_5_5_16_inpad_data_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="conv_layer_5_120_1_0_5_5_16_relu1_input_data_V">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv_layer_5_120_1_0_5_5_16_relu1_input_data_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="conv_layer_5_120_1_0_5_5_16_relu1_output_data_V">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="conv_layer_5_120_1_0_5_5_16_relu1_output_data_V"/><MemPortTyVec>2 3 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1001" name="const_12">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="forward_conv.2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1001" name="const_14">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="1"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1001" name="const_16">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1001" name="const_18">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecLoopTripCount"/></StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1001" name="const_20">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1001" name="const_22">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1001" name="const_24">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1001" name="const_26">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitSelect.i1.i16.i32"/></StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1001" name="const_28">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1001" name="const_30">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1004" name="conv_layer_output_d_gep_fu_32">
+<pin_list>
+<pin id="33" dir="0" index="0" bw="16" slack="0"/>
+<pin id="34" dir="0" index="1" bw="1" slack="0"/>
+<pin id="35" dir="0" index="2" bw="7" slack="0"/>
+<pin id="36" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="conv_layer_output_d/3 "/>
+</bind>
+</comp>
+
+<comp id="39" class="1004" name="grp_access_fu_39">
+<pin_list>
+<pin id="40" dir="0" index="0" bw="7" slack="0"/>
+<pin id="41" dir="0" index="1" bw="16" slack="0"/>
+<pin id="42" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="43" dir="1" index="3" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="store"/>
+<opset="conv_layer_output_d_1/3 StgValue_53/8 "/>
+</bind>
+</comp>
+
+<comp id="45" class="1004" name="conv_layer_relu1_inp_gep_fu_45">
+<pin_list>
+<pin id="46" dir="0" index="0" bw="16" slack="0"/>
+<pin id="47" dir="0" index="1" bw="1" slack="0"/>
+<pin id="48" dir="0" index="2" bw="7" slack="1"/>
+<pin id="49" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="conv_layer_relu1_inp/4 "/>
+</bind>
+</comp>
+
+<comp id="52" class="1004" name="grp_access_fu_52">
+<pin_list>
+<pin id="53" dir="0" index="0" bw="7" slack="0"/>
+<pin id="54" dir="0" index="1" bw="16" slack="0"/>
+<pin id="55" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="56" dir="1" index="3" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="load"/>
+<opset="StgValue_23/4 conv_layer_relu1_inp_2/5 "/>
+</bind>
+</comp>
+
+<comp id="59" class="1004" name="conv_layer_relu1_inp_1_gep_fu_59">
+<pin_list>
+<pin id="60" dir="0" index="0" bw="16" slack="0"/>
+<pin id="61" dir="0" index="1" bw="1" slack="0"/>
+<pin id="62" dir="0" index="2" bw="7" slack="0"/>
+<pin id="63" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="conv_layer_relu1_inp_1/5 "/>
+</bind>
+</comp>
+
+<comp id="67" class="1004" name="conv_layer_relu1_out_gep_fu_67">
+<pin_list>
+<pin id="68" dir="0" index="0" bw="15" slack="0"/>
+<pin id="69" dir="0" index="1" bw="1" slack="0"/>
+<pin id="70" dir="0" index="2" bw="7" slack="1"/>
+<pin id="71" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="conv_layer_relu1_out/6 "/>
+</bind>
+</comp>
+
+<comp id="74" class="1004" name="grp_access_fu_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="7" slack="0"/>
+<pin id="76" dir="0" index="1" bw="15" slack="0"/>
+<pin id="77" dir="0" index="2" bw="0" slack="2147483647"/>
+<pin id="78" dir="1" index="3" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) store(28) " fcode="load"/>
+<opset="StgValue_39/6 conv_layer_relu1_out_2/7 "/>
+</bind>
+</comp>
+
+<comp id="80" class="1004" name="conv_layer_relu1_out_1_gep_fu_80">
+<pin_list>
+<pin id="81" dir="0" index="0" bw="15" slack="0"/>
+<pin id="82" dir="0" index="1" bw="1" slack="0"/>
+<pin id="83" dir="0" index="2" bw="7" slack="0"/>
+<pin id="84" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="conv_layer_relu1_out_1/7 "/>
+</bind>
+</comp>
+
+<comp id="88" class="1004" name="conv_layer_output_d_2_gep_fu_88">
+<pin_list>
+<pin id="89" dir="0" index="0" bw="16" slack="0"/>
+<pin id="90" dir="0" index="1" bw="1" slack="0"/>
+<pin id="91" dir="0" index="2" bw="7" slack="1"/>
+<pin id="92" dir="1" index="3" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="getelementptr(29) " fcode="getelementptr"/>
+<opset="conv_layer_output_d_2/8 "/>
+</bind>
+</comp>
+
+<comp id="96" class="1005" name="p_i0_0_i_reg_96">
+<pin_list>
+<pin id="97" dir="0" index="0" bw="7" slack="1"/>
+<pin id="98" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_i0_0_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="100" class="1004" name="p_i0_0_i_phi_fu_100">
+<pin_list>
+<pin id="101" dir="0" index="0" bw="1" slack="1"/>
+<pin id="102" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="103" dir="0" index="2" bw="7" slack="0"/>
+<pin id="104" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="105" dir="1" index="4" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="p_i0_0_i/3 "/>
+</bind>
+</comp>
+
+<comp id="107" class="1005" name="p_z_assign_0_i_reg_107">
+<pin_list>
+<pin id="108" dir="0" index="0" bw="7" slack="1"/>
+<pin id="109" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_z_assign_0_i (phireg) "/>
+</bind>
+</comp>
+
+<comp id="111" class="1004" name="p_z_assign_0_i_phi_fu_111">
+<pin_list>
+<pin id="112" dir="0" index="0" bw="7" slack="0"/>
+<pin id="113" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="114" dir="0" index="2" bw="1" slack="1"/>
+<pin id="115" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="116" dir="1" index="4" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="p_z_assign_0_i/5 "/>
+</bind>
+</comp>
+
+<comp id="118" class="1005" name="p_i0_0_i1_reg_118">
+<pin_list>
+<pin id="119" dir="0" index="0" bw="7" slack="1"/>
+<pin id="120" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_i0_0_i1 (phireg) "/>
+</bind>
+</comp>
+
+<comp id="122" class="1004" name="p_i0_0_i1_phi_fu_122">
+<pin_list>
+<pin id="123" dir="0" index="0" bw="7" slack="0"/>
+<pin id="124" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="125" dir="0" index="2" bw="1" slack="1"/>
+<pin id="126" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="127" dir="1" index="4" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="phi(47) " fcode="phi"/>
+<opset="p_i0_0_i1/7 "/>
+</bind>
+</comp>
+
+<comp id="129" class="1004" name="grp_forward_conv_2_fu_129">
+<pin_list>
+<pin id="130" dir="0" index="0" bw="0" slack="0"/>
+<pin id="131" dir="0" index="1" bw="16" slack="0"/>
+<pin id="132" dir="0" index="2" bw="16" slack="0"/>
+<pin id="133" dir="0" index="3" bw="16" slack="0"/>
+<pin id="134" dir="0" index="4" bw="16" slack="0"/>
+<pin id="135" dir="1" index="5" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="StgValue_9/1 "/>
+</bind>
+</comp>
+
+<comp id="141" class="1004" name="p_i0_0_i_cast3_fu_141">
+<pin_list>
+<pin id="142" dir="0" index="0" bw="7" slack="0"/>
+<pin id="143" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="p_i0_0_i_cast3/3 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="tmp_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="7" slack="0"/>
+<pin id="148" dir="0" index="1" bw="7" slack="0"/>
+<pin id="149" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp/3 "/>
+</bind>
+</comp>
+
+<comp id="152" class="1004" name="p_i0_fu_152">
+<pin_list>
+<pin id="153" dir="0" index="0" bw="7" slack="0"/>
+<pin id="154" dir="0" index="1" bw="1" slack="0"/>
+<pin id="155" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="p_i0/3 "/>
+</bind>
+</comp>
+
+<comp id="158" class="1004" name="exitcond_0_i_fu_158">
+<pin_list>
+<pin id="159" dir="0" index="0" bw="7" slack="0"/>
+<pin id="160" dir="0" index="1" bw="7" slack="0"/>
+<pin id="161" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="exitcond_0_i/5 "/>
+</bind>
+</comp>
+
+<comp id="164" class="1004" name="iz_0_i_fu_164">
+<pin_list>
+<pin id="165" dir="0" index="0" bw="7" slack="0"/>
+<pin id="166" dir="0" index="1" bw="1" slack="0"/>
+<pin id="167" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="iz_0_i/5 "/>
+</bind>
+</comp>
+
+<comp id="170" class="1004" name="tmp_10_0_i_fu_170">
+<pin_list>
+<pin id="171" dir="0" index="0" bw="7" slack="0"/>
+<pin id="172" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="tmp_10_0_i/5 "/>
+</bind>
+</comp>
+
+<comp id="175" class="1004" name="tmp_71_fu_175">
+<pin_list>
+<pin id="176" dir="0" index="0" bw="16" slack="0"/>
+<pin id="177" dir="1" index="1" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="tmp_71/6 "/>
+</bind>
+</comp>
+
+<comp id="179" class="1004" name="tmp_72_fu_179">
+<pin_list>
+<pin id="180" dir="0" index="0" bw="1" slack="0"/>
+<pin id="181" dir="0" index="1" bw="16" slack="0"/>
+<pin id="182" dir="0" index="2" bw="5" slack="0"/>
+<pin id="183" dir="1" index="3" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="bitselect(1000) " fcode="bitselect"/>
+<opset="tmp_72/6 "/>
+</bind>
+</comp>
+
+<comp id="187" class="1004" name="storemerge_0_i_fu_187">
+<pin_list>
+<pin id="188" dir="0" index="0" bw="1" slack="0"/>
+<pin id="189" dir="0" index="1" bw="15" slack="0"/>
+<pin id="190" dir="0" index="2" bw="15" slack="0"/>
+<pin id="191" dir="1" index="3" bw="15" slack="0"/>
+</pin_list>
+<bind>
+<opcode="select(49) " fcode="select"/>
+<opset="storemerge_0_i/6 "/>
+</bind>
+</comp>
+
+<comp id="196" class="1004" name="p_i0_0_i1_cast1_fu_196">
+<pin_list>
+<pin id="197" dir="0" index="0" bw="7" slack="0"/>
+<pin id="198" dir="1" index="1" bw="64" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="p_i0_0_i1_cast1/7 "/>
+</bind>
+</comp>
+
+<comp id="201" class="1004" name="tmp_s_fu_201">
+<pin_list>
+<pin id="202" dir="0" index="0" bw="7" slack="0"/>
+<pin id="203" dir="0" index="1" bw="7" slack="0"/>
+<pin id="204" dir="1" index="2" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="icmp(45) " fcode="icmp"/>
+<opset="tmp_s/7 "/>
+</bind>
+</comp>
+
+<comp id="207" class="1004" name="p_i0_5_fu_207">
+<pin_list>
+<pin id="208" dir="0" index="0" bw="7" slack="0"/>
+<pin id="209" dir="0" index="1" bw="1" slack="0"/>
+<pin id="210" dir="1" index="2" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opcode="add(8) " fcode="add"/>
+<opset="p_i0_5/7 "/>
+</bind>
+</comp>
+
+<comp id="213" class="1004" name="extLd_fu_213">
+<pin_list>
+<pin id="214" dir="0" index="0" bw="15" slack="0"/>
+<pin id="215" dir="1" index="1" bw="16" slack="0"/>
+</pin_list>
+<bind>
+<opcode="zext(34) " fcode="zext"/>
+<opset="extLd/8 "/>
+</bind>
+</comp>
+
+<comp id="218" class="1005" name="p_i0_0_i_cast3_reg_218">
+<pin_list>
+<pin id="219" dir="0" index="0" bw="64" slack="1"/>
+<pin id="220" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_i0_0_i_cast3 "/>
+</bind>
+</comp>
+
+<comp id="226" class="1005" name="p_i0_reg_226">
+<pin_list>
+<pin id="227" dir="0" index="0" bw="7" slack="0"/>
+<pin id="228" dir="1" index="1" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opset="p_i0 "/>
+</bind>
+</comp>
+
+<comp id="231" class="1005" name="conv_layer_output_d_reg_231">
+<pin_list>
+<pin id="232" dir="0" index="0" bw="7" slack="1"/>
+<pin id="233" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="conv_layer_output_d "/>
+</bind>
+</comp>
+
+<comp id="239" class="1005" name="iz_0_i_reg_239">
+<pin_list>
+<pin id="240" dir="0" index="0" bw="7" slack="0"/>
+<pin id="241" dir="1" index="1" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opset="iz_0_i "/>
+</bind>
+</comp>
+
+<comp id="244" class="1005" name="tmp_10_0_i_reg_244">
+<pin_list>
+<pin id="245" dir="0" index="0" bw="64" slack="1"/>
+<pin id="246" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_10_0_i "/>
+</bind>
+</comp>
+
+<comp id="249" class="1005" name="conv_layer_relu1_inp_1_reg_249">
+<pin_list>
+<pin id="250" dir="0" index="0" bw="7" slack="1"/>
+<pin id="251" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="conv_layer_relu1_inp_1 "/>
+</bind>
+</comp>
+
+<comp id="254" class="1005" name="p_i0_0_i1_cast1_reg_254">
+<pin_list>
+<pin id="255" dir="0" index="0" bw="64" slack="1"/>
+<pin id="256" dir="1" index="1" bw="64" slack="1"/>
+</pin_list>
+<bind>
+<opset="p_i0_0_i1_cast1 "/>
+</bind>
+</comp>
+
+<comp id="262" class="1005" name="p_i0_5_reg_262">
+<pin_list>
+<pin id="263" dir="0" index="0" bw="7" slack="0"/>
+<pin id="264" dir="1" index="1" bw="7" slack="0"/>
+</pin_list>
+<bind>
+<opset="p_i0_5 "/>
+</bind>
+</comp>
+
+<comp id="267" class="1005" name="conv_layer_relu1_out_1_reg_267">
+<pin_list>
+<pin id="268" dir="0" index="0" bw="7" slack="1"/>
+<pin id="269" dir="1" index="1" bw="7" slack="1"/>
+</pin_list>
+<bind>
+<opset="conv_layer_relu1_out_1 "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="37"><net_src comp="2" pin="0"/><net_sink comp="32" pin=0"/></net>
+
+<net id="38"><net_src comp="24" pin="0"/><net_sink comp="32" pin=1"/></net>
+
+<net id="44"><net_src comp="32" pin="3"/><net_sink comp="39" pin=0"/></net>
+
+<net id="50"><net_src comp="8" pin="0"/><net_sink comp="45" pin=0"/></net>
+
+<net id="51"><net_src comp="24" pin="0"/><net_sink comp="45" pin=1"/></net>
+
+<net id="57"><net_src comp="39" pin="3"/><net_sink comp="52" pin=1"/></net>
+
+<net id="58"><net_src comp="45" pin="3"/><net_sink comp="52" pin=0"/></net>
+
+<net id="64"><net_src comp="8" pin="0"/><net_sink comp="59" pin=0"/></net>
+
+<net id="65"><net_src comp="24" pin="0"/><net_sink comp="59" pin=1"/></net>
+
+<net id="66"><net_src comp="59" pin="3"/><net_sink comp="52" pin=0"/></net>
+
+<net id="72"><net_src comp="10" pin="0"/><net_sink comp="67" pin=0"/></net>
+
+<net id="73"><net_src comp="24" pin="0"/><net_sink comp="67" pin=1"/></net>
+
+<net id="79"><net_src comp="67" pin="3"/><net_sink comp="74" pin=0"/></net>
+
+<net id="85"><net_src comp="10" pin="0"/><net_sink comp="80" pin=0"/></net>
+
+<net id="86"><net_src comp="24" pin="0"/><net_sink comp="80" pin=1"/></net>
+
+<net id="87"><net_src comp="80" pin="3"/><net_sink comp="74" pin=0"/></net>
+
+<net id="93"><net_src comp="2" pin="0"/><net_sink comp="88" pin=0"/></net>
+
+<net id="94"><net_src comp="24" pin="0"/><net_sink comp="88" pin=1"/></net>
+
+<net id="95"><net_src comp="88" pin="3"/><net_sink comp="39" pin=0"/></net>
+
+<net id="99"><net_src comp="14" pin="0"/><net_sink comp="96" pin=0"/></net>
+
+<net id="106"><net_src comp="96" pin="1"/><net_sink comp="100" pin=0"/></net>
+
+<net id="110"><net_src comp="14" pin="0"/><net_sink comp="107" pin=0"/></net>
+
+<net id="117"><net_src comp="107" pin="1"/><net_sink comp="111" pin=2"/></net>
+
+<net id="121"><net_src comp="14" pin="0"/><net_sink comp="118" pin=0"/></net>
+
+<net id="128"><net_src comp="118" pin="1"/><net_sink comp="122" pin=2"/></net>
+
+<net id="136"><net_src comp="12" pin="0"/><net_sink comp="129" pin=0"/></net>
+
+<net id="137"><net_src comp="0" pin="0"/><net_sink comp="129" pin=1"/></net>
+
+<net id="138"><net_src comp="2" pin="0"/><net_sink comp="129" pin=2"/></net>
+
+<net id="139"><net_src comp="4" pin="0"/><net_sink comp="129" pin=3"/></net>
+
+<net id="140"><net_src comp="6" pin="0"/><net_sink comp="129" pin=4"/></net>
+
+<net id="144"><net_src comp="100" pin="4"/><net_sink comp="141" pin=0"/></net>
+
+<net id="145"><net_src comp="141" pin="1"/><net_sink comp="32" pin=2"/></net>
+
+<net id="150"><net_src comp="100" pin="4"/><net_sink comp="146" pin=0"/></net>
+
+<net id="151"><net_src comp="16" pin="0"/><net_sink comp="146" pin=1"/></net>
+
+<net id="156"><net_src comp="100" pin="4"/><net_sink comp="152" pin=0"/></net>
+
+<net id="157"><net_src comp="22" pin="0"/><net_sink comp="152" pin=1"/></net>
+
+<net id="162"><net_src comp="111" pin="4"/><net_sink comp="158" pin=0"/></net>
+
+<net id="163"><net_src comp="16" pin="0"/><net_sink comp="158" pin=1"/></net>
+
+<net id="168"><net_src comp="111" pin="4"/><net_sink comp="164" pin=0"/></net>
+
+<net id="169"><net_src comp="22" pin="0"/><net_sink comp="164" pin=1"/></net>
+
+<net id="173"><net_src comp="111" pin="4"/><net_sink comp="170" pin=0"/></net>
+
+<net id="174"><net_src comp="170" pin="1"/><net_sink comp="59" pin=2"/></net>
+
+<net id="178"><net_src comp="52" pin="3"/><net_sink comp="175" pin=0"/></net>
+
+<net id="184"><net_src comp="26" pin="0"/><net_sink comp="179" pin=0"/></net>
+
+<net id="185"><net_src comp="52" pin="3"/><net_sink comp="179" pin=1"/></net>
+
+<net id="186"><net_src comp="28" pin="0"/><net_sink comp="179" pin=2"/></net>
+
+<net id="192"><net_src comp="179" pin="3"/><net_sink comp="187" pin=0"/></net>
+
+<net id="193"><net_src comp="30" pin="0"/><net_sink comp="187" pin=1"/></net>
+
+<net id="194"><net_src comp="175" pin="1"/><net_sink comp="187" pin=2"/></net>
+
+<net id="195"><net_src comp="187" pin="3"/><net_sink comp="74" pin=1"/></net>
+
+<net id="199"><net_src comp="122" pin="4"/><net_sink comp="196" pin=0"/></net>
+
+<net id="200"><net_src comp="196" pin="1"/><net_sink comp="80" pin=2"/></net>
+
+<net id="205"><net_src comp="122" pin="4"/><net_sink comp="201" pin=0"/></net>
+
+<net id="206"><net_src comp="16" pin="0"/><net_sink comp="201" pin=1"/></net>
+
+<net id="211"><net_src comp="122" pin="4"/><net_sink comp="207" pin=0"/></net>
+
+<net id="212"><net_src comp="22" pin="0"/><net_sink comp="207" pin=1"/></net>
+
+<net id="216"><net_src comp="74" pin="3"/><net_sink comp="213" pin=0"/></net>
+
+<net id="217"><net_src comp="213" pin="1"/><net_sink comp="39" pin=1"/></net>
+
+<net id="221"><net_src comp="141" pin="1"/><net_sink comp="218" pin=0"/></net>
+
+<net id="222"><net_src comp="218" pin="1"/><net_sink comp="45" pin=2"/></net>
+
+<net id="229"><net_src comp="152" pin="2"/><net_sink comp="226" pin=0"/></net>
+
+<net id="230"><net_src comp="226" pin="1"/><net_sink comp="100" pin=2"/></net>
+
+<net id="234"><net_src comp="32" pin="3"/><net_sink comp="231" pin=0"/></net>
+
+<net id="235"><net_src comp="231" pin="1"/><net_sink comp="39" pin=0"/></net>
+
+<net id="242"><net_src comp="164" pin="2"/><net_sink comp="239" pin=0"/></net>
+
+<net id="243"><net_src comp="239" pin="1"/><net_sink comp="111" pin=0"/></net>
+
+<net id="247"><net_src comp="170" pin="1"/><net_sink comp="244" pin=0"/></net>
+
+<net id="248"><net_src comp="244" pin="1"/><net_sink comp="67" pin=2"/></net>
+
+<net id="252"><net_src comp="59" pin="3"/><net_sink comp="249" pin=0"/></net>
+
+<net id="253"><net_src comp="249" pin="1"/><net_sink comp="52" pin=0"/></net>
+
+<net id="257"><net_src comp="196" pin="1"/><net_sink comp="254" pin=0"/></net>
+
+<net id="258"><net_src comp="254" pin="1"/><net_sink comp="88" pin=2"/></net>
+
+<net id="265"><net_src comp="207" pin="2"/><net_sink comp="262" pin=0"/></net>
+
+<net id="266"><net_src comp="262" pin="1"/><net_sink comp="122" pin=0"/></net>
+
+<net id="270"><net_src comp="80" pin="3"/><net_sink comp="267" pin=0"/></net>
+
+<net id="271"><net_src comp="267" pin="1"/><net_sink comp="74" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+	Port: conv_layer_5_120_1_0_5_5_16_output_data_V | {1 2 8 }
+	Port: conv_layer_5_120_1_0_5_5_16_inpad_data_V | {1 2 }
+	Port: conv_layer_5_120_1_0_5_5_16_relu1_input_data_V | {4 }
+	Port: conv_layer_5_120_1_0_5_5_16_relu1_output_data_V | {6 }
+ - Input state : 
+	Port: forward.4 : conv_layer_5_120_1_0_5_5_16_input_data_V | {1 2 }
+	Port: forward.4 : conv_layer_5_120_1_0_5_5_16_output_data_V | {3 4 }
+	Port: forward.4 : conv_layer_5_120_1_0_5_5_16_W_data_V | {1 2 }
+	Port: forward.4 : conv_layer_5_120_1_0_5_5_16_inpad_data_V | {1 2 }
+	Port: forward.4 : conv_layer_5_120_1_0_5_5_16_relu1_input_data_V | {5 6 }
+	Port: forward.4 : conv_layer_5_120_1_0_5_5_16_relu1_output_data_V | {7 8 }
+  - Chain level:
+	State 1
+	State 2
+	State 3
+		p_i0_0_i_cast3 : 1
+		tmp : 1
+		p_i0 : 1
+		StgValue_17 : 2
+		conv_layer_output_d : 2
+		conv_layer_output_d_1 : 3
+	State 4
+		StgValue_23 : 1
+	State 5
+		exitcond_0_i : 1
+		iz_0_i : 1
+		StgValue_29 : 2
+		tmp_10_0_i : 1
+		conv_layer_relu1_inp_1 : 2
+		conv_layer_relu1_inp_2 : 3
+	State 6
+		tmp_71 : 1
+		tmp_72 : 1
+		storemerge_0_i : 2
+		StgValue_39 : 3
+	State 7
+		p_i0_0_i1_cast1 : 1
+		tmp_s : 1
+		p_i0_5 : 1
+		StgValue_46 : 2
+		conv_layer_relu1_out_1 : 2
+		conv_layer_relu1_out_2 : 3
+	State 8
+		extLd : 1
+		StgValue_53 : 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|---------------------------|---------|---------|---------|---------|
+| Operation|      Functional Unit      |  DSP48E |  Delay  |    FF   |   LUT   |
+|----------|---------------------------|---------|---------|---------|---------|
+|   call   | grp_forward_conv_2_fu_129 |    1    |  24.766 |   422   |   617   |
+|----------|---------------------------|---------|---------|---------|---------|
+|          |        p_i0_fu_152        |    0    |    0    |    0    |    15   |
+|    add   |       iz_0_i_fu_164       |    0    |    0    |    0    |    15   |
+|          |       p_i0_5_fu_207       |    0    |    0    |    0    |    15   |
+|----------|---------------------------|---------|---------|---------|---------|
+|          |         tmp_fu_146        |    0    |    0    |    0    |    11   |
+|   icmp   |    exitcond_0_i_fu_158    |    0    |    0    |    0    |    11   |
+|          |        tmp_s_fu_201       |    0    |    0    |    0    |    11   |
+|----------|---------------------------|---------|---------|---------|---------|
+|  select  |   storemerge_0_i_fu_187   |    0    |    0    |    0    |    15   |
+|----------|---------------------------|---------|---------|---------|---------|
+|          |   p_i0_0_i_cast3_fu_141   |    0    |    0    |    0    |    0    |
+|   zext   |     tmp_10_0_i_fu_170     |    0    |    0    |    0    |    0    |
+|          |   p_i0_0_i1_cast1_fu_196  |    0    |    0    |    0    |    0    |
+|          |        extLd_fu_213       |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|
+|   trunc  |       tmp_71_fu_175       |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|
+| bitselect|       tmp_72_fu_179       |    0    |    0    |    0    |    0    |
+|----------|---------------------------|---------|---------|---------|---------|
+|   Total  |                           |    1    |  24.766 |   422   |   710   |
+|----------|---------------------------|---------|---------|---------|---------|
+
+Memories:
+N/A
+
+* Register list:
++------------------------------+--------+
+|                              |   FF   |
++------------------------------+--------+
+|  conv_layer_output_d_reg_231 |    7   |
+|conv_layer_relu1_inp_1_reg_249|    7   |
+|conv_layer_relu1_out_1_reg_267|    7   |
+|        iz_0_i_reg_239        |    7   |
+|    p_i0_0_i1_cast1_reg_254   |   64   |
+|       p_i0_0_i1_reg_118      |    7   |
+|    p_i0_0_i_cast3_reg_218    |   64   |
+|        p_i0_0_i_reg_96       |    7   |
+|        p_i0_5_reg_262        |    7   |
+|         p_i0_reg_226         |    7   |
+|    p_z_assign_0_i_reg_107    |    7   |
+|      tmp_10_0_i_reg_244      |   64   |
++------------------------------+--------+
+|             Total            |   255  |
++------------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|------------------|------|------|------|--------||---------||---------|
+|       Comp       |  Pin | Size |  BW  | S x BW ||  Delay  ||   LUT   |
+|------------------|------|------|------|--------||---------||---------|
+| grp_access_fu_39 |  p0  |   3  |   7  |   21   ||    15   |
+| grp_access_fu_52 |  p0  |   3  |   7  |   21   ||    15   |
+| grp_access_fu_74 |  p0  |   3  |   7  |   21   ||    15   |
+|------------------|------|------|------|--------||---------||---------|
+|       Total      |      |      |      |   63   || 5.44425 ||    45   |
+|------------------|------|------|------|--------||---------||---------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+
+|           | DSP48E |  Delay |   FF   |   LUT  |
++-----------+--------+--------+--------+--------+
+|  Function |    1   |   24   |   422  |   710  |
+|   Memory  |    -   |    -   |    -   |    -   |
+|Multiplexer|    -   |    5   |    -   |   45   |
+|  Register |    -   |    -   |   255  |    -   |
++-----------+--------+--------+--------+--------+
+|   Total   |    1   |   30   |   677  |   755  |
++-----------+--------+--------+--------+--------+

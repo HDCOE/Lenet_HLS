@@ -1,0 +1,1759 @@
+INFO-FLOW: Workspace /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1 opened at Fri May 24 00:13:43 +03 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.11 sec.
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.16 sec.
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.28 sec.
+Execute   set_part xc7z020clg484-1 -tool vivado 
+Execute     add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute       get_default_platform 
+Execute       license_isbetapart xc7z020 
+Command       license_isbetapart done; error code: 1; 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute   create_clock -period 10 -name default 
+Execute   csynth_design 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -lm 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     config_compile -blackbox  
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -lm=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'zynqconn/lenet5.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling zynqconn/lenet5.cpp as C++
+Execute       get_default_platform 
+Execute       is_encrypted zynqconn/lenet5.cpp 
+Execute       get_default_platform 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "/home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/gcc" -hls  -fno-exceptions  -D__llvm__  -E "zynqconn/lenet5.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp" 
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -fno-exceptions -D__llvm__ -E zynqconn/lenet5.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot -I /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp
+Command       clang done; 2.28 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.49 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "/home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/gcc" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp"  -o "/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot -I /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/useless.bc
+WARNING: [HLS 200-40] In file included from zynqconn/lenet5.cpp:1:
+In file included from zynqconn/lenet5.cpp:8:
+In file included from zynqconn/config.h:15:
+zynqconn/RELU_layer.h:6:18: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ layer_type type = relu;
+                 ^
+In file included from zynqconn/lenet5.cpp:1:
+In file included from zynqconn/lenet5.cpp:8:
+In file included from zynqconn/config.h:16:
+zynqconn/CONV_layer.h:10:18: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ layer_type type = conv;
+                 ^
+zynqconn/CONV_layer.h:23:17: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ int vert_start = 0, horiz_start = 0;
+                ^
+zynqconn/CONV_layer.h:23:34: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ int vert_start = 0, horiz_start = 0;
+                                 ^
+In file included from zynqconn/lenet5.cpp:1:
+In file included from zynqconn/lenet5.cpp:8:
+In file included from zynqconn/config.h:17:
+zynqconn/FC_layer.h:9:18: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+ layer_type type = fc;
+                 ^
+In file included from zynqconn/lenet5.cpp:1:
+In file included from zynqconn/lenet5.cpp:8:
+In file included from zynqconn/config.h:18:
+zynqconn/POOLING_layer.h:9:21: warning: in-class initialization of non-static data member is a C++11 extension [-Wc++11-extensions]
+    layer_type type = pooling;
+                    ^
+6 warnings generated.
+Command       clang done; 3.14 sec.
+INFO-FLOW: Done: GCC PP time: 6.9 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp std=gnu++98 -directive=/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.26 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp std=gnu++98 -directive=/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 1.22 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/xilinx-dataflow-lawyer.lenet5.pp.0.cpp.diag.yml /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/xilinx-dataflow-lawyer.lenet5.pp.0.cpp.out.log 2> /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/xilinx-dataflow-lawyer.lenet5.pp.0.cpp.err.log 
+Command       ap_eval done; 1.31 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/tidy-3.1.lenet5.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/tidy-3.1.lenet5.pp.0.cpp.out.log 2> /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/tidy-3.1.lenet5.pp.0.cpp.err.log 
+Command         ap_eval done; 1.57 sec.
+Execute         ap_eval exec -ignorestderr /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/xilinx-legacy-rewriter.lenet5.pp.0.cpp.out.log 2> /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/xilinx-legacy-rewriter.lenet5.pp.0.cpp.err.log 
+Command         ap_eval done; 1.78 sec.
+Command       tidy_31 done; 3.35 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 5.9 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 2.07 sec.
+Execute       get_default_platform 
+INFO-FLOW: Processing labels
+Execute       clang -src /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "/home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "/home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "/home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.bc" 
+INFO-FLOW: exec /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain /home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/tools/gcc -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot -I /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.bc
+Command       clang done; 3.14 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet5.g.bc -hls-opt -except-internalize lenet -L/home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/lib -lhlsm -lhlsmc++ -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.25 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 436.426 ; gain = 0.090 ; free physical = 350 ; free virtual = 7786
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 436.426 ; gain = 0.090 ; free physical = 350 ; free virtual = 7786
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.pp.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.pp.0.bc -f 
+Execute         llvm-ld /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.pp.0.bc -disable-opt -L/home/hadee/Work/Xilinx/Vivado/2018.3/lnx64/lib -lfloatconversion -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 1.2 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top lenet -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.0.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 1>::data' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::conv_layer.1' (zynqconn/CONV_layer.h:35).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 6>::data' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::conv_layer.1' (zynqconn/CONV_layer.h:35).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::data' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::conv_layer.1' (zynqconn/CONV_layer.h:35).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::data' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' (zynqconn/CONV_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::data' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' (zynqconn/CONV_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::data' into 'fc_layer<10, 1, 1, 120>::fc_layer.1' (zynqconn/FC_layer.h:24).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 32, 1>::data' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 32, 1>::data' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 32, 1>::operator()' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:78).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 1>::operator()' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:78).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 28, 28, 6>::operator()' into 'relu_layer<28, 28, 6>::forward' (zynqconn/RELU_layer.h:29).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 28, 28, 6>::operator()' into 'relu_layer<28, 28, 6>::forward' (zynqconn/RELU_layer.h:27).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 28, 28, 6>::operator()' into 'relu_layer<28, 28, 6>::forward' (zynqconn/RELU_layer.h:24).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 28, 28, 6>::operator()' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:82).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 28, 28, 6>::operator()' into 'pool_layer<2, 2, 1, 28, 28, 6>::forward_pool' (zynqconn/POOLING_layer.h:50).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 28, 28, 6>::operator()' into 'pool_layer<2, 2, 1, 28, 28, 6>::forward_pool' (zynqconn/POOLING_layer.h:44).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 6>::operator()' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:82).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::operator()' into 'relu_layer<14, 14, 6>::forward' (zynqconn/RELU_layer.h:29).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::operator()' into 'relu_layer<14, 14, 6>::forward' (zynqconn/RELU_layer.h:27).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::operator()' into 'relu_layer<14, 14, 6>::forward' (zynqconn/RELU_layer.h:24).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::operator()' into 'pool_layer<2, 2, 1, 28, 28, 6>::forward_pool' (zynqconn/POOLING_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::operator()' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:78).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::data' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 14, 14, 6>::data' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 6>::operator()' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:78).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, 10, 16>::operator()' into 'relu_layer<10, 10, 16>::forward' (zynqconn/RELU_layer.h:29).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, 10, 16>::operator()' into 'relu_layer<10, 10, 16>::forward' (zynqconn/RELU_layer.h:27).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, 10, 16>::operator()' into 'relu_layer<10, 10, 16>::forward' (zynqconn/RELU_layer.h:24).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, 10, 16>::operator()' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:82).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, 10, 16>::operator()' into 'pool_layer<2, 2, 1, 10, 10, 16>::forward_pool' (zynqconn/POOLING_layer.h:50).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 10, 10, 16>::operator()' into 'pool_layer<2, 2, 1, 10, 10, 16>::forward_pool' (zynqconn/POOLING_layer.h:44).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 16>::operator()' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:82).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::operator()' into 'relu_layer<5, 5, 16>::forward' (zynqconn/RELU_layer.h:29).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::operator()' into 'relu_layer<5, 5, 16>::forward' (zynqconn/RELU_layer.h:27).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::operator()' into 'relu_layer<5, 5, 16>::forward' (zynqconn/RELU_layer.h:24).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::operator()' into 'pool_layer<2, 2, 1, 10, 10, 16>::forward_pool' (zynqconn/POOLING_layer.h:60).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::operator()' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' (zynqconn/CONV_layer.h:78).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 5, 5, 16>::operator()' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' (zynqconn/CONV_layer.h:78).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'relu_layer<1, 1, 120>::forward' (zynqconn/RELU_layer.h:29).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'relu_layer<1, 1, 120>::forward' (zynqconn/RELU_layer.h:27).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'relu_layer<1, 1, 120>::forward' (zynqconn/RELU_layer.h:24).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' (zynqconn/CONV_layer.h:82).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' (zynqconn/CONV_layer.h:82).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'fc_layer<10, 1, 1, 120>::forward' (zynqconn/FC_layer.h:48).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 120>::operator()' into 'fc_layer<10, 1, 1, 120>::forward' (zynqconn/FC_layer.h:48).
+INFO: [XFORM 203-603] Inlining function 'tensor_t<ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>, 1, 1, 10>::operator()' into 'fc_layer<10, 1, 1, 120>::forward' (zynqconn/FC_layer.h:51).
+Command         transform done; 0.75 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 564.336 ; gain = 128.000 ; free physical = 330 ; free virtual = 7771
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.1.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'fill.3' into 'lenet' (zynqconn/CONV_layer.h:35->zynqconn/CONV_layer.h:38->zynqconn/lenet5.cpp:69) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill.2' into 'lenet' (zynqconn/CONV_layer.h:35->zynqconn/CONV_layer.h:38->zynqconn/lenet5.cpp:71) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill.1' into 'lenet' (zynqconn/CONV_layer.h:35->zynqconn/CONV_layer.h:38->zynqconn/lenet5.cpp:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill' into 'lenet' (zynqconn/FC_layer.h:24->zynqconn/FC_layer.h:27->zynqconn/lenet5.cpp:74) automatically.
+INFO: [XFORM 203-602] Inlining function 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward' into 'lenet' (zynqconn/lenet5.cpp:119) automatically.
+INFO: [XFORM 203-602] Inlining function 'pool_layer<2, 2, 1, 28, 28, 6>::forward' into 'lenet' (zynqconn/lenet5.cpp:120) automatically.
+INFO: [XFORM 203-602] Inlining function 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward' into 'lenet' (zynqconn/lenet5.cpp:121) automatically.
+INFO: [XFORM 203-602] Inlining function 'pool_layer<2, 2, 1, 10, 10, 16>::forward' into 'lenet' (zynqconn/lenet5.cpp:122) automatically.
+INFO: [XFORM 203-602] Inlining function 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward' into 'lenet' (zynqconn/lenet5.cpp:123) automatically.
+Command         transform done; 38.37 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:01:01 ; elapsed = 00:01:02 . Memory (MB): peak = 564.336 ; gain = 128.000 ; free physical = 286 ; free virtual = 7726
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.g.1.bc to /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -ptrArgReplace -mem2reg -instcombine -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -instcombine -dce -global-constprop -deadargelim -mem2reg -instcombine -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -instcombine -dce -ptrArgReplace -mem2reg -instcombine -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -instcombine -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -inst-simplify -dce -norm-name -function-inline -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.1.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1' (zynqconn/RELU_layer.h:20) in function 'relu_layer<1, 1, 120>::forward' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1.1' (zynqconn/RELU_layer.h:21) in function 'relu_layer<1, 1, 120>::forward' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1.1' (zynqconn/FC_layer.h:44) in function 'fc_layer<10, 1, 1, 120>::forward' automatically.
+INFO: [XFORM 203-502] Unrolling small iteration loop 'Loop-1.1.1' (zynqconn/FC_layer.h:45) in function 'fc_layer<10, 1, 1, 120>::forward' automatically.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (zynqconn/RELU_layer.h:20) in function 'relu_layer<1, 1, 120>::forward' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (zynqconn/RELU_layer.h:21) in function 'relu_layer<1, 1, 120>::forward' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (zynqconn/FC_layer.h:44) in function 'fc_layer<10, 1, 1, 120>::forward' completely with a factor of 1.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (zynqconn/FC_layer.h:45) in function 'fc_layer<10, 1, 1, 120>::forward' completely with a factor of 1.
+INFO: [XFORM 203-602] Inlining function 'relu_layer<28, 28, 6>::forward' into 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward' (zynqconn/CONV_layer.h:53) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_layer<14, 14, 6>::forward' into 'pool_layer<2, 2, 1, 28, 28, 6>::forward' (zynqconn/POOLING_layer.h:25) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_layer<10, 10, 16>::forward' into 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward' (zynqconn/CONV_layer.h:53) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_layer<5, 5, 16>::forward' into 'pool_layer<2, 2, 1, 10, 10, 16>::forward' (zynqconn/POOLING_layer.h:25) automatically.
+INFO: [XFORM 203-602] Inlining function 'relu_layer<1, 1, 120>::forward' into 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward' (zynqconn/CONV_layer.h:53) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill' into 'lenet' (zynqconn/CONV_layer.h:35->zynqconn/CONV_layer.h:38->zynqconn/lenet5.cpp:69) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill.1' into 'lenet' (zynqconn/CONV_layer.h:35->zynqconn/CONV_layer.h:38->zynqconn/lenet5.cpp:71) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill.2' into 'lenet' (zynqconn/CONV_layer.h:35->zynqconn/CONV_layer.h:38->zynqconn/lenet5.cpp:73) automatically.
+INFO: [XFORM 203-602] Inlining function 'fill.3' into 'lenet' (zynqconn/FC_layer.h:24->zynqconn/FC_layer.h:27->zynqconn/lenet5.cpp:74) automatically.
+INFO: [XFORM 203-602] Inlining function 'fc_layer<10, 1, 1, 120>::forward' into 'lenet' (zynqconn/lenet5.cpp:124) automatically.
+Command         transform done; 39.51 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'pool_layer<2, 2, 1, 10, 10, 16>::forward_pool' (zynqconn/POOLING_layer.h:29)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'pool_layer<2, 2, 1, 10, 10, 16>::forward' (zynqconn/POOLING_layer.h:21)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' (zynqconn/CONV_layer.h:57)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' (zynqconn/CONV_layer.h:57)...6 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward' (zynqconn/CONV_layer.h:49)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'Padding.2' (zynqconn/lenet5.cpp:32:36)...3 expression(s) balanced.
+Command         transform done; 2.25 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:01:42 ; elapsed = 00:01:44 . Memory (MB): peak = 628.336 ; gain = 192.000 ; free physical = 228 ; free virtual = 7683
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.2.bc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'pool_layer<2, 2, 1, 28, 28, 6>::forward_pool' to 'forward_pool' (zynqconn/POOLING_layer.h:29)
+WARNING: [XFORM 203-631] Renaming function 'pool_layer<2, 2, 1, 28, 28, 6>::forward' to 'forward' (zynqconn/POOLING_layer.h:21)
+WARNING: [XFORM 203-631] Renaming function 'pool_layer<2, 2, 1, 10, 10, 16>::forward_pool' to 'forward_pool.1' (zynqconn/POOLING_layer.h:34:73)
+WARNING: [XFORM 203-631] Renaming function 'pool_layer<2, 2, 1, 10, 10, 16>::forward' to 'forward.1' (zynqconn/RELU_layer.h:15:30)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward_conv' to 'forward_conv' (zynqconn/CONV_layer.h:57)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer<5, 6, 1, 0, 32, 32, 1>::forward' to 'forward.2' (zynqconn/RELU_layer.h:15:30)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward_conv' to 'forward_conv.1' (zynqconn/CONV_layer.h:36:56)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer<5, 16, 1, 0, 14, 14, 6>::forward' to 'forward.3' (zynqconn/RELU_layer.h:15:30)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward_conv' to 'forward_conv.2' (zynqconn/CONV_layer.h:36:61)
+WARNING: [XFORM 203-631] Renaming function 'conv_layer<5, 120, 1, 0, 5, 5, 16>::forward' to 'forward.4' (zynqconn/Tensor.h:15:8)
+Command         transform done; 15.32 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:01:58 ; elapsed = 00:01:59 . Memory (MB): peak = 756.336 ; gain = 320.000 ; free physical = 123 ; free virtual = 7580
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 97.57 sec.
+Command     elaborate done; 118.21 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'lenet' ...
+Execute       ap_set_top_model lenet 
+WARNING: [SYN 201-103] Legalizing function name 'forward.2' to 'forward_2'.
+WARNING: [SYN 201-103] Legalizing function name 'Padding.1' to 'Padding_1'.
+WARNING: [SYN 201-103] Legalizing function name 'forward_conv.1' to 'forward_conv_1'.
+WARNING: [SYN 201-103] Legalizing function name 'forward.3' to 'forward_3'.
+WARNING: [SYN 201-103] Legalizing function name 'forward_pool.1' to 'forward_pool_1'.
+WARNING: [SYN 201-103] Legalizing function name 'forward.1' to 'forward_1'.
+WARNING: [SYN 201-103] Legalizing function name 'Padding.2' to 'Padding_2'.
+WARNING: [SYN 201-103] Legalizing function name 'forward_conv.2' to 'forward_conv_2'.
+WARNING: [SYN 201-103] Legalizing function name 'forward.4' to 'forward_4'.
+Execute       get_model_list lenet -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model lenet 
+Execute       preproc_iomode -model forward.4 
+Execute       preproc_iomode -model forward_conv.2 
+Execute       preproc_iomode -model Padding.2 
+Execute       preproc_iomode -model forward.1 
+Execute       preproc_iomode -model forward_pool.1 
+Execute       preproc_iomode -model forward.3 
+Execute       preproc_iomode -model forward_conv.1 
+Execute       preproc_iomode -model Padding.1 
+Execute       preproc_iomode -model forward 
+Execute       preproc_iomode -model forward_pool 
+Execute       preproc_iomode -model forward.2 
+Execute       preproc_iomode -model forward_conv 
+Execute       preproc_iomode -model Padding 
+Execute       get_model_list lenet -filter all-wo-channel 
+INFO-FLOW: Model list for configure: Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet
+INFO-FLOW: Configuring Module : Padding ...
+Execute       set_default_model Padding 
+Execute       apply_spec_resource_limit Padding 
+INFO-FLOW: Configuring Module : forward_conv ...
+Execute       set_default_model forward_conv 
+Execute       apply_spec_resource_limit forward_conv 
+INFO-FLOW: Configuring Module : forward.2 ...
+Execute       set_default_model forward.2 
+Execute       apply_spec_resource_limit forward.2 
+INFO-FLOW: Configuring Module : forward_pool ...
+Execute       set_default_model forward_pool 
+Execute       apply_spec_resource_limit forward_pool 
+INFO-FLOW: Configuring Module : forward ...
+Execute       set_default_model forward 
+Execute       apply_spec_resource_limit forward 
+INFO-FLOW: Configuring Module : Padding.1 ...
+Execute       set_default_model Padding.1 
+Execute       apply_spec_resource_limit Padding.1 
+INFO-FLOW: Configuring Module : forward_conv.1 ...
+Execute       set_default_model forward_conv.1 
+Execute       apply_spec_resource_limit forward_conv.1 
+INFO-FLOW: Configuring Module : forward.3 ...
+Execute       set_default_model forward.3 
+Execute       apply_spec_resource_limit forward.3 
+INFO-FLOW: Configuring Module : forward_pool.1 ...
+Execute       set_default_model forward_pool.1 
+Execute       apply_spec_resource_limit forward_pool.1 
+INFO-FLOW: Configuring Module : forward.1 ...
+Execute       set_default_model forward.1 
+Execute       apply_spec_resource_limit forward.1 
+INFO-FLOW: Configuring Module : Padding.2 ...
+Execute       set_default_model Padding.2 
+Execute       apply_spec_resource_limit Padding.2 
+INFO-FLOW: Configuring Module : forward_conv.2 ...
+Execute       set_default_model forward_conv.2 
+Execute       apply_spec_resource_limit forward_conv.2 
+INFO-FLOW: Configuring Module : forward.4 ...
+Execute       set_default_model forward.4 
+Execute       apply_spec_resource_limit forward.4 
+INFO-FLOW: Configuring Module : lenet ...
+Execute       set_default_model lenet 
+Execute       apply_spec_resource_limit lenet 
+INFO-FLOW: Model list for preprocess: Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet
+INFO-FLOW: Preprocessing Module: Padding ...
+Execute       set_default_model Padding 
+Execute       cdfg_preprocess -model Padding 
+Execute       rtl_gen_preprocess Padding 
+INFO-FLOW: Preprocessing Module: forward_conv ...
+Execute       set_default_model forward_conv 
+Execute       cdfg_preprocess -model forward_conv 
+Execute       rtl_gen_preprocess forward_conv 
+INFO-FLOW: Preprocessing Module: forward.2 ...
+Execute       set_default_model forward.2 
+Execute       cdfg_preprocess -model forward.2 
+Execute       rtl_gen_preprocess forward.2 
+INFO-FLOW: Preprocessing Module: forward_pool ...
+Execute       set_default_model forward_pool 
+Execute       cdfg_preprocess -model forward_pool 
+Execute       rtl_gen_preprocess forward_pool 
+INFO-FLOW: Preprocessing Module: forward ...
+Execute       set_default_model forward 
+Execute       cdfg_preprocess -model forward 
+Execute       rtl_gen_preprocess forward 
+INFO-FLOW: Preprocessing Module: Padding.1 ...
+Execute       set_default_model Padding.1 
+Execute       cdfg_preprocess -model Padding.1 
+Execute       rtl_gen_preprocess Padding.1 
+INFO-FLOW: Preprocessing Module: forward_conv.1 ...
+Execute       set_default_model forward_conv.1 
+Execute       cdfg_preprocess -model forward_conv.1 
+Execute       rtl_gen_preprocess forward_conv.1 
+INFO-FLOW: Preprocessing Module: forward.3 ...
+Execute       set_default_model forward.3 
+Execute       cdfg_preprocess -model forward.3 
+Execute       rtl_gen_preprocess forward.3 
+INFO-FLOW: Preprocessing Module: forward_pool.1 ...
+Execute       set_default_model forward_pool.1 
+Execute       cdfg_preprocess -model forward_pool.1 
+Execute       rtl_gen_preprocess forward_pool.1 
+INFO-FLOW: Preprocessing Module: forward.1 ...
+Execute       set_default_model forward.1 
+Execute       cdfg_preprocess -model forward.1 
+Execute       rtl_gen_preprocess forward.1 
+INFO-FLOW: Preprocessing Module: Padding.2 ...
+Execute       set_default_model Padding.2 
+Execute       cdfg_preprocess -model Padding.2 
+Execute       rtl_gen_preprocess Padding.2 
+INFO-FLOW: Preprocessing Module: forward_conv.2 ...
+Execute       set_default_model forward_conv.2 
+Execute       cdfg_preprocess -model forward_conv.2 
+Execute       rtl_gen_preprocess forward_conv.2 
+INFO-FLOW: Preprocessing Module: forward.4 ...
+Execute       set_default_model forward.4 
+Execute       cdfg_preprocess -model forward.4 
+Execute       rtl_gen_preprocess forward.4 
+INFO-FLOW: Preprocessing Module: lenet ...
+Execute       set_default_model lenet 
+Execute       cdfg_preprocess -model lenet 
+Execute       rtl_gen_preprocess lenet 
+INFO-FLOW: Model list for synthesis: Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Padding' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Padding 
+Execute       schedule -model Padding 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 119.06 seconds; current allocated memory: 263.880 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.verbose.sched.rpt -verbose -f 
+INFO: [HLS 200-434] Only 0 loops out of a total 3 loops have been pipelined in this design.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.sched.adb -f 
+INFO-FLOW: Finish scheduling Padding.
+Execute       set_default_model Padding 
+Execute       bind -model Padding 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Padding
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 264.100 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.bind.adb -f 
+INFO-FLOW: Finish binding Padding.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_conv 
+Execute       schedule -model forward_conv 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 264.435 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_conv.
+Execute       set_default_model forward_conv 
+Execute       bind -model forward_conv 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_conv
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 264.788 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.verbose.bind.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.bind.adb -f 
+INFO-FLOW: Finish binding forward_conv.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward.2 
+Execute       schedule -model forward.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 265.050 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.sched.adb -f 
+INFO-FLOW: Finish scheduling forward.2.
+Execute       set_default_model forward.2 
+Execute       bind -model forward.2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward.2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 265.319 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.verbose.bind.rpt -verbose -f 
+Command       report done; 0.21 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.bind.adb -f 
+INFO-FLOW: Finish binding forward.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_pool 
+Execute       schedule -model forward_pool 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.31 seconds; current allocated memory: 265.624 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_pool.
+Execute       set_default_model forward_pool 
+Execute       bind -model forward_pool 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_pool
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 265.930 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.bind.adb -f 
+INFO-FLOW: Finish binding forward_pool.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward 
+Execute       schedule -model forward 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 266.155 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.sched.adb -f 
+INFO-FLOW: Finish scheduling forward.
+Execute       set_default_model forward 
+Execute       bind -model forward 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 266.456 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.verbose.bind.rpt -verbose -f 
+Command       report done; 0.16 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.bind.adb -f 
+INFO-FLOW: Finish binding forward.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Padding_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Padding.1 
+Execute       schedule -model Padding.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.24 seconds; current allocated memory: 266.603 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.sched.adb -f 
+INFO-FLOW: Finish scheduling Padding.1.
+Execute       set_default_model Padding.1 
+Execute       bind -model Padding.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Padding.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.07 seconds; current allocated memory: 266.818 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.bind.adb -f 
+INFO-FLOW: Finish binding Padding.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_conv.1 
+Execute       schedule -model forward_conv.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 267.175 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_conv.1.
+Execute       set_default_model forward_conv.1 
+Execute       bind -model forward_conv.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_conv.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 267.570 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.verbose.bind.rpt -verbose -f 
+Command       report done; 0.2 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.bind.adb -f 
+INFO-FLOW: Finish binding forward_conv.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward.3 
+Execute       schedule -model forward.3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 267.855 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.sched.adb -f 
+INFO-FLOW: Finish scheduling forward.3.
+Execute       set_default_model forward.3 
+Execute       bind -model forward.3 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward.3
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 268.118 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.verbose.bind.rpt -verbose -f 
+Command       report done; 0.24 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.bind.adb -f 
+INFO-FLOW: Finish binding forward.3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_pool.1 
+Execute       schedule -model forward_pool.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 268.420 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_pool.1.
+Execute       set_default_model forward_pool.1 
+Execute       bind -model forward_pool.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_pool.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 268.720 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.verbose.bind.rpt -verbose -f 
+Command       report done; 0.12 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.bind.adb -f 
+INFO-FLOW: Finish binding forward_pool.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward.1 
+Execute       schedule -model forward.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 268.957 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.sched.adb -f 
+INFO-FLOW: Finish scheduling forward.1.
+Execute       set_default_model forward.1 
+Execute       bind -model forward.1 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward.1
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.23 seconds; current allocated memory: 269.210 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.verbose.bind.rpt -verbose -f 
+Command       report done; 0.18 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.bind.adb -f 
+INFO-FLOW: Finish binding forward.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Padding_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Padding.2 
+Execute       schedule -model Padding.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.27 seconds; current allocated memory: 269.366 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.sched.adb -f 
+INFO-FLOW: Finish scheduling Padding.2.
+Execute       set_default_model Padding.2 
+Execute       bind -model Padding.2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=Padding.2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 269.569 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.verbose.bind.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.bind.adb -f 
+INFO-FLOW: Finish binding Padding.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward_conv.2 
+Execute       schedule -model forward_conv.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.14 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 269.876 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.sched.adb -f 
+INFO-FLOW: Finish scheduling forward_conv.2.
+Execute       set_default_model forward_conv.2 
+Execute       bind -model forward_conv.2 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward_conv.2
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 270.239 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.verbose.bind.rpt -verbose -f 
+Command       report done; 0.2 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.bind.adb -f 
+INFO-FLOW: Finish binding forward_conv.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'forward_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model forward.4 
+Execute       schedule -model forward.4 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.3 seconds; current allocated memory: 270.418 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.verbose.sched.rpt -verbose -f 
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.sched.adb -f 
+INFO-FLOW: Finish scheduling forward.4.
+Execute       set_default_model forward.4 
+Execute       bind -model forward.4 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=forward.4
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 270.592 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.verbose.bind.rpt -verbose -f 
+Command       report done; 0.21 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.bind.adb -f 
+INFO-FLOW: Finish binding forward.4.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'lenet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model lenet 
+Execute       schedule -model lenet 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.7 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.93 seconds; current allocated memory: 272.706 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.verbose.sched.rpt -verbose -f 
+Command       report done; 0.64 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.sched.adb -f 
+Command       db_write done; 0.25 sec.
+INFO-FLOW: Finish scheduling lenet.
+Execute       set_default_model lenet 
+Execute       bind -model lenet 
+BIND OPTION: fu_weight=[ 0.0 -- 1.0 ]
+BIND OPTION: model=lenet
+BIND OPTION: reg_weight=[ 0.0 -- 1.0 ]
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 1.59 sec.
+INFO: [HLS 200-111]  Elapsed time: 2.48 seconds; current allocated memory: 275.298 MB.
+Execute       report -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.verbose.bind.rpt -verbose -f 
+Command       report done; 1.82 sec.
+Execute       db_write -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.bind.adb -f 
+Command       db_write done; 0.18 sec.
+INFO-FLOW: Finish binding lenet.
+Execute       get_model_list lenet -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess Padding 
+Execute       rtl_gen_preprocess forward_conv 
+Execute       rtl_gen_preprocess forward.2 
+Execute       rtl_gen_preprocess forward_pool 
+Execute       rtl_gen_preprocess forward 
+Execute       rtl_gen_preprocess Padding.1 
+Execute       rtl_gen_preprocess forward_conv.1 
+Execute       rtl_gen_preprocess forward.3 
+Execute       rtl_gen_preprocess forward_pool.1 
+Execute       rtl_gen_preprocess forward.1 
+Execute       rtl_gen_preprocess Padding.2 
+Execute       rtl_gen_preprocess forward_conv.2 
+Execute       rtl_gen_preprocess forward.4 
+Execute       rtl_gen_preprocess lenet 
+INFO-FLOW: Model list for RTL generation: Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Padding' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Padding -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Padding'.
+INFO: [HLS 200-111]  Elapsed time: 2.04 seconds; current allocated memory: 275.989 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Padding -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/Padding -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl Padding -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/Padding 
+Execute       gen_rtl Padding -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/Padding 
+Execute       gen_tb_info Padding -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model Padding -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/Padding_csynth.rpt -f 
+Execute       report -model Padding -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/Padding_csynth.xml -f -x 
+Execute       report -model Padding -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.verbose.rpt -verbose -f 
+Execute       db_write -model Padding -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_conv' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_conv -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'lenet_mac_muladd_16s_16s_28ns_28_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_conv'.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 277.390 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_conv -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_conv -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward_conv -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_conv 
+Execute       gen_rtl forward_conv -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_conv 
+Execute       gen_tb_info forward_conv -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward_conv -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_conv_csynth.rpt -f 
+Execute       report -model forward_conv -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_conv_csynth.xml -f -x 
+Execute       report -model forward_conv -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.verbose.rpt -verbose -f 
+Command       report done; 0.19 sec.
+Execute       db_write -model forward_conv -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward.2 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 279.569 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward.2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_2 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward.2 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_2 
+Execute       gen_rtl forward.2 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_2 
+Execute       gen_tb_info forward.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_2_csynth.rpt -f 
+Execute       report -model forward.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_2_csynth.xml -f -x 
+Execute       report -model forward.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.verbose.rpt -verbose -f 
+Command       report done; 0.23 sec.
+Execute       db_write -model forward.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_pool' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_pool -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_pool'.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 281.286 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_pool -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_pool -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward_pool -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_pool 
+Execute       gen_rtl forward_pool -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_pool 
+Execute       gen_tb_info forward_pool -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward_pool -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_pool_csynth.rpt -f 
+Execute       report -model forward_pool -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_pool_csynth.xml -f -x 
+Execute       report -model forward_pool -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.verbose.rpt -verbose -f 
+Command       report done; 0.14 sec.
+Execute       db_write -model forward_pool -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.adb -f 
+Command       db_write done; 0.13 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward'.
+INFO: [HLS 200-111]  Elapsed time: 0.48 seconds; current allocated memory: 283.153 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward 
+Execute       gen_rtl forward -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward 
+Execute       gen_tb_info forward -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_csynth.rpt -f 
+Execute       report -model forward -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_csynth.xml -f -x 
+Execute       report -model forward -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.verbose.rpt -verbose -f 
+Command       report done; 0.19 sec.
+Execute       db_write -model forward -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Padding_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Padding.1 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Padding_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.43 seconds; current allocated memory: 284.757 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Padding.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/Padding_1 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl Padding.1 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/Padding_1 
+Execute       gen_rtl Padding.1 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/Padding_1 
+Execute       gen_tb_info Padding.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model Padding.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/Padding_1_csynth.rpt -f 
+Execute       report -model Padding.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/Padding_1_csynth.xml -f -x 
+Execute       report -model Padding.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.verbose.rpt -verbose -f 
+Execute       db_write -model Padding.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_conv_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_conv.1 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'lenet_mac_muladd_16s_16s_28ns_28_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_conv_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.32 seconds; current allocated memory: 286.345 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_conv.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_conv_1 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward_conv.1 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_conv_1 
+Execute       gen_rtl forward_conv.1 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_conv_1 
+Execute       gen_tb_info forward_conv.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward_conv.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_conv_1_csynth.rpt -f 
+Execute       report -model forward_conv.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_conv_1_csynth.xml -f -x 
+Execute       report -model forward_conv.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.verbose.rpt -verbose -f 
+Command       report done; 0.31 sec.
+Execute       db_write -model forward_conv.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.adb -f 
+Command       db_write done; 0.14 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward.3 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_3'.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 288.667 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward.3 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_3 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward.3 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_3 
+Execute       gen_rtl forward.3 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_3 
+Execute       gen_tb_info forward.3 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward.3 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_3_csynth.rpt -f 
+Execute       report -model forward.3 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_3_csynth.xml -f -x 
+Execute       report -model forward.3 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.verbose.rpt -verbose -f 
+Command       report done; 0.26 sec.
+Execute       db_write -model forward.3 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.adb -f 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_pool_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_pool.1 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_pool_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.49 seconds; current allocated memory: 290.376 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_pool.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_pool_1 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward_pool.1 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_pool_1 
+Execute       gen_rtl forward_pool.1 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_pool_1 
+Execute       gen_tb_info forward_pool.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward_pool.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_pool_1_csynth.rpt -f 
+Execute       report -model forward_pool.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_pool_1_csynth.xml -f -x 
+Execute       report -model forward_pool.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.verbose.rpt -verbose -f 
+Command       report done; 0.13 sec.
+Execute       db_write -model forward_pool.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.adb -f 
+Command       db_write done; 0.13 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward.1 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.42 seconds; current allocated memory: 292.243 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_1 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward.1 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_1 
+Execute       gen_rtl forward.1 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_1 
+Execute       gen_tb_info forward.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_1_csynth.rpt -f 
+Execute       report -model forward.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_1_csynth.xml -f -x 
+Execute       report -model forward.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.verbose.rpt -verbose -f 
+Command       report done; 0.19 sec.
+Execute       db_write -model forward.1 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.adb -f 
+Command       db_write done; 0.13 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Padding_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model Padding.2 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Padding_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.48 seconds; current allocated memory: 293.670 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Padding.2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/Padding_2 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl Padding.2 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/Padding_2 
+Execute       gen_rtl Padding.2 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/Padding_2 
+Execute       gen_tb_info Padding.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model Padding.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/Padding_2_csynth.rpt -f 
+Execute       report -model Padding.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/Padding_2_csynth.xml -f -x 
+Execute       report -model Padding.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.verbose.rpt -verbose -f 
+Command       report done; 0.11 sec.
+Execute       db_write -model Padding.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.adb -f 
+Command       db_write done; 0.13 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_conv_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward_conv.2 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'lenet_mac_muladd_16s_16s_28ns_28_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_conv_2'.
+INFO: [HLS 200-111]  Elapsed time: 0.38 seconds; current allocated memory: 295.226 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward_conv.2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_conv_2 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward_conv.2 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_conv_2 
+Execute       gen_rtl forward_conv.2 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_conv_2 
+Execute       gen_tb_info forward_conv.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward_conv.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_conv_2_csynth.rpt -f 
+Execute       report -model forward_conv.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_conv_2_csynth.xml -f -x 
+Execute       report -model forward_conv.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.verbose.rpt -verbose -f 
+Command       report done; 0.23 sec.
+Execute       db_write -model forward_conv.2 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.adb -f 
+Command       db_write done; 0.17 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'forward_4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model forward.4 -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'forward_4'.
+INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 297.282 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl forward.4 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/forward_4 -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl forward.4 -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/forward_4 
+Execute       gen_rtl forward.4 -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/forward_4 
+Execute       gen_tb_info forward.4 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4 -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model forward.4 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_4_csynth.rpt -f 
+Execute       report -model forward.4 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/forward_4_csynth.xml -f -x 
+Execute       report -model forward.4 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.verbose.rpt -verbose -f 
+Command       report done; 0.22 sec.
+Execute       db_write -model forward.4 -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.adb -f 
+Command       db_write done; 0.14 sec.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'lenet' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -prefix 
+Execute       get_config_rtl -auto_prefix 
+Execute       create_rtl_model lenet -vendor xilinx -mg_file /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/inStream_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/outStream_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/c1w_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/c3w_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/c5w_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/fcw_V_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'lenet/start' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'lenet' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' and 'start' to AXI-Lite port CRTL_BUS.
+INFO: [RTGEN 206-100] Generating core module 'lenet_mac_muladd_16s_16s_28ns_28_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'lenet'.
+Command       create_rtl_model done; 0.86 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.29 seconds; current allocated memory: 303.134 MB.
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       gen_rtl lenet -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/systemc/lenet -synmodules Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet 
+Execute       gen_rtl lenet -istop -style xilinx -f -lang vhdl -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/vhdl/lenet 
+Command       gen_rtl done; 0.7 sec.
+Execute       gen_rtl lenet -istop -style xilinx -f -lang vlog -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/verilog/lenet 
+Command       gen_rtl done; 0.34 sec.
+Execute       export_constraint_db -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.constraint.tcl -f -tool general 
+Execute       report -model lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.design.xml -verbose -f -dv 
+Command       report done; 1.38 sec.
+Execute       report -model lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.sdaccel.xml -verbose -f -sdaccel 
+Command       report done; 1.01 sec.
+Execute       gen_tb_info lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet -p /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db 
+Execute       report -model lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/lenet_csynth.rpt -f 
+Command       report done; 0.35 sec.
+Execute       report -model lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/syn/report/lenet_csynth.xml -f -x 
+Command       report done; 0.34 sec.
+Execute       report -model lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.verbose.rpt -verbose -f 
+Command       report done; 2.19 sec.
+Execute       db_write -model lenet -o /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.adb -f 
+Command       db_write done; 0.81 sec.
+Execute       sc_get_clocks lenet 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain lenet 
+INFO-FLOW: Model list for RTL component generation: Padding forward_conv forward.2 forward_pool forward Padding.1 forward_conv.1 forward.3 forward_pool.1 forward.1 Padding.2 forward_conv.2 forward.4 lenet
+INFO-FLOW: Handling components in module [Padding] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_conv] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.compgen.tcl 
+INFO-FLOW: Found component lenet_mac_muladd_16s_16s_28ns_28_1_1.
+INFO-FLOW: Append model lenet_mac_muladd_16s_16s_28ns_28_1_1
+INFO-FLOW: Handling components in module [forward_2] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_pool] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.compgen.tcl 
+INFO-FLOW: Handling components in module [forward] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.compgen.tcl 
+INFO-FLOW: Handling components in module [Padding_1] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_conv_1] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_3] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_pool_1] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_1] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.compgen.tcl 
+INFO-FLOW: Handling components in module [Padding_2] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_conv_2] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.compgen.tcl 
+INFO-FLOW: Handling components in module [forward_4] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.compgen.tcl 
+INFO-FLOW: Handling components in module [lenet] ... 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.compgen.tcl 
+INFO-FLOW: Found component lenet_c1_W_size_x.
+INFO-FLOW: Append model lenet_c1_W_size_x
+INFO-FLOW: Found component lenet_c1_W_size_z.
+INFO-FLOW: Append model lenet_c1_W_size_z
+INFO-FLOW: Found component lenet_c3_W_size_x.
+INFO-FLOW: Append model lenet_c3_W_size_x
+INFO-FLOW: Found component lenet_c3_W_size_z.
+INFO-FLOW: Append model lenet_c3_W_size_z
+INFO-FLOW: Found component lenet_c5_W_size_x.
+INFO-FLOW: Append model lenet_c5_W_size_x
+INFO-FLOW: Found component lenet_c5_W_size_z.
+INFO-FLOW: Append model lenet_c5_W_size_z
+INFO-FLOW: Found component lenet_fc6_W_size_x.
+INFO-FLOW: Append model lenet_fc6_W_size_x
+INFO-FLOW: Found component lenet_fc6_W_size_z.
+INFO-FLOW: Append model lenet_fc6_W_size_z
+INFO-FLOW: Found component lenet_c1_input_data_V.
+INFO-FLOW: Append model lenet_c1_input_data_V
+INFO-FLOW: Found component lenet_c1_output_data_V.
+INFO-FLOW: Append model lenet_c1_output_data_V
+INFO-FLOW: Found component lenet_c1_W_data_V.
+INFO-FLOW: Append model lenet_c1_W_data_V
+INFO-FLOW: Found component lenet_c1_relu1_output_dat.
+INFO-FLOW: Append model lenet_c1_relu1_output_dat
+INFO-FLOW: Found component lenet_p2_output_data_V.
+INFO-FLOW: Append model lenet_p2_output_data_V
+INFO-FLOW: Found component lenet_p2_relu1_output_dat.
+INFO-FLOW: Append model lenet_p2_relu1_output_dat
+INFO-FLOW: Found component lenet_c3_output_data_V.
+INFO-FLOW: Append model lenet_c3_output_data_V
+INFO-FLOW: Found component lenet_c3_W_data_V.
+INFO-FLOW: Append model lenet_c3_W_data_V
+INFO-FLOW: Found component lenet_c3_relu1_output_dat.
+INFO-FLOW: Append model lenet_c3_relu1_output_dat
+INFO-FLOW: Found component lenet_p4_output_data_V.
+INFO-FLOW: Append model lenet_p4_output_data_V
+INFO-FLOW: Found component lenet_p4_relu1_output_dat.
+INFO-FLOW: Append model lenet_p4_relu1_output_dat
+INFO-FLOW: Found component lenet_c5_output_data_V.
+INFO-FLOW: Append model lenet_c5_output_data_V
+INFO-FLOW: Found component lenet_c5_W_data_V.
+INFO-FLOW: Append model lenet_c5_W_data_V
+INFO-FLOW: Found component lenet_c5_relu1_output_dat.
+INFO-FLOW: Append model lenet_c5_relu1_output_dat
+INFO-FLOW: Found component lenet_fc6_output_data_V.
+INFO-FLOW: Append model lenet_fc6_output_data_V
+INFO-FLOW: Found component lenet_fc6_W_data_V.
+INFO-FLOW: Append model lenet_fc6_W_data_V
+INFO-FLOW: Found component lenet_CRTL_BUS_s_axi.
+INFO-FLOW: Append model lenet_CRTL_BUS_s_axi
+INFO-FLOW: Append model Padding
+INFO-FLOW: Append model forward_conv
+INFO-FLOW: Append model forward_2
+INFO-FLOW: Append model forward_pool
+INFO-FLOW: Append model forward
+INFO-FLOW: Append model Padding_1
+INFO-FLOW: Append model forward_conv_1
+INFO-FLOW: Append model forward_3
+INFO-FLOW: Append model forward_pool_1
+INFO-FLOW: Append model forward_1
+INFO-FLOW: Append model Padding_2
+INFO-FLOW: Append model forward_conv_2
+INFO-FLOW: Append model forward_4
+INFO-FLOW: Append model lenet
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: lenet_mac_muladd_16s_16s_28ns_28_1_1 lenet_c1_W_size_x lenet_c1_W_size_z lenet_c3_W_size_x lenet_c3_W_size_z lenet_c5_W_size_x lenet_c5_W_size_z lenet_fc6_W_size_x lenet_fc6_W_size_z lenet_c1_input_data_V lenet_c1_output_data_V lenet_c1_W_data_V lenet_c1_relu1_output_dat lenet_p2_output_data_V lenet_p2_relu1_output_dat lenet_c3_output_data_V lenet_c3_W_data_V lenet_c3_relu1_output_dat lenet_p4_output_data_V lenet_p4_relu1_output_dat lenet_c5_output_data_V lenet_c5_W_data_V lenet_c5_relu1_output_dat lenet_fc6_output_data_V lenet_fc6_W_data_V lenet_CRTL_BUS_s_axi Padding forward_conv forward_2 forward_pool forward Padding_1 forward_conv_1 forward_3 forward_pool_1 forward_1 Padding_2 forward_conv_2 forward_4 lenet
+INFO-FLOW: To file: write model lenet_mac_muladd_16s_16s_28ns_28_1_1
+INFO-FLOW: To file: write model lenet_c1_W_size_x
+INFO-FLOW: To file: write model lenet_c1_W_size_z
+INFO-FLOW: To file: write model lenet_c3_W_size_x
+INFO-FLOW: To file: write model lenet_c3_W_size_z
+INFO-FLOW: To file: write model lenet_c5_W_size_x
+INFO-FLOW: To file: write model lenet_c5_W_size_z
+INFO-FLOW: To file: write model lenet_fc6_W_size_x
+INFO-FLOW: To file: write model lenet_fc6_W_size_z
+INFO-FLOW: To file: write model lenet_c1_input_data_V
+INFO-FLOW: To file: write model lenet_c1_output_data_V
+INFO-FLOW: To file: write model lenet_c1_W_data_V
+INFO-FLOW: To file: write model lenet_c1_relu1_output_dat
+INFO-FLOW: To file: write model lenet_p2_output_data_V
+INFO-FLOW: To file: write model lenet_p2_relu1_output_dat
+INFO-FLOW: To file: write model lenet_c3_output_data_V
+INFO-FLOW: To file: write model lenet_c3_W_data_V
+INFO-FLOW: To file: write model lenet_c3_relu1_output_dat
+INFO-FLOW: To file: write model lenet_p4_output_data_V
+INFO-FLOW: To file: write model lenet_p4_relu1_output_dat
+INFO-FLOW: To file: write model lenet_c5_output_data_V
+INFO-FLOW: To file: write model lenet_c5_W_data_V
+INFO-FLOW: To file: write model lenet_c5_relu1_output_dat
+INFO-FLOW: To file: write model lenet_fc6_output_data_V
+INFO-FLOW: To file: write model lenet_fc6_W_data_V
+INFO-FLOW: To file: write model lenet_CRTL_BUS_s_axi
+INFO-FLOW: To file: write model Padding
+INFO-FLOW: To file: write model forward_conv
+INFO-FLOW: To file: write model forward_2
+INFO-FLOW: To file: write model forward_pool
+INFO-FLOW: To file: write model forward
+INFO-FLOW: To file: write model Padding_1
+INFO-FLOW: To file: write model forward_conv_1
+INFO-FLOW: To file: write model forward_3
+INFO-FLOW: To file: write model forward_pool_1
+INFO-FLOW: To file: write model forward_1
+INFO-FLOW: To file: write model Padding_2
+INFO-FLOW: To file: write model forward_conv_2
+INFO-FLOW: To file: write model forward_4
+INFO-FLOW: To file: write model lenet
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.15 sec.
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.16 sec.
+Command       ap_source done; 0.16 sec.
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.compgen.tcl 
+INFO: [RTMG 210-279] Implementing memory 'lenet_c1_W_size_x_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_c1_W_size_z_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_c3_W_size_x_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_c3_W_size_z_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_c5_W_size_x_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_c5_W_size_z_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_fc6_W_size_x_rom' using distributed ROMs.
+INFO: [RTMG 210-279] Implementing memory 'lenet_fc6_W_size_z_rom' using distributed ROMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c1_input_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c1_output_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c1_W_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c1_relu1_output_dat_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_p2_output_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_p2_relu1_output_dat_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c3_output_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c3_W_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c3_relu1_output_dat_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_p4_output_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_p4_relu1_output_dat_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c5_output_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c5_W_data_V_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_c5_relu1_output_dat_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_fc6_output_data_V_ram (RAM)' using distributed RAMs.
+INFO: [RTMG 210-278] Implementing memory 'lenet_fc6_W_data_V_ram (RAM)' using block RAMs.
+Execute         source ./CRTL_BUS.slave.tcl 
+Execute         is_m_axi_addr64 
+Command       ap_source done; 0.37 sec.
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/common.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute               source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute               source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command             ap_source done; 0.11 sec.
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command           ap_source done; 0.15 sec.
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command         ap_source done; 0.15 sec.
+Command       ap_source done; 0.15 sec.
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=lenet xml_exists=0
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.rtl_wrap.cfg.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.tbgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_3.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_pool_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_1.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/Padding_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_conv_2.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/forward_4.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.compgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.constraint.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=14
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=8
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=40 #gSsdmPorts=14
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.tbgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.tbgen.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_export -xo 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/lenet.constraint.tcl 
+Execute       sc_get_clocks lenet 
+Execute       source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       ::config_rtl 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:02:17 ; elapsed = 00:02:25 . Memory (MB): peak = 824.344 ; gain = 388.008 ; free physical = 107 ; free virtual = 7517
+INFO: [SYSC 207-301] Generating SystemC RTL for lenet.
+INFO: [VHDL 208-304] Generating VHDL RTL for lenet.
+INFO: [VLOG 209-307] Generating Verilog RTL for lenet.
+Command     autosyn done; 25.82 sec.
+Execute     get_part 
+Execute     get_config_export -sdx_tcl 
+Command   csynth_design done; 144.05 sec.
+Command ap_source done; 144.39 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1 opened at Fri May 24 00:16:59 +03 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.16 sec.
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.31 sec.
+Execute   csim_design -quiet 
+Execute     source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/TB.cpp 
+Execute     is_xip /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/TB.cpp 
+Execute     is_encrypted /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/lenet5.cpp 
+Execute     is_xip /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/lenet5.cpp 
+Execute     get_default_platform 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.51 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 7.69 sec.
+Command ap_source done; 8.01 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1 opened at Fri May 24 02:22:50 +03 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.11 sec.
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.18 sec.
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.19 sec.
+Command     ap_source done; 0.19 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.36 sec.
+Execute   csim_design -quiet 
+Execute     source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/TB.cpp 
+Execute     is_xip /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/TB.cpp 
+Execute     is_encrypted /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/lenet5.cpp 
+Execute     is_xip /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/lenet5.cpp 
+Execute     get_default_platform 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.54 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 0.64 sec.
+Command ap_source done; 1 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1 opened at Fri May 24 02:24:03 +03 2019
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.lib 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_old.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_vivado.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       get_default_platform 
+Execute       config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute       config_chip_info -quiet -speed medium 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/virtex.gen 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/plb46.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/fsl.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/axi4.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.gen 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/util.gen 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfft.gen 
+Command           ap_source done; 0.12 sec.
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.16 sec.
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.16 sec.
+Command     ap_source done; 0.16 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv7.lib 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_hp.lib 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv.hlp 
+Execute         source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/target_info.tcl 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_hp.hlp 
+Execute     source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source /home/hadee/Work/Xilinx/Vivado/2018.3/common/technology/xilinx/common/xilinx_fpv6.gen 
+Execute     set_part xc7z020clg484-1 
+Execute       add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
+Execute         get_default_platform 
+Execute         license_isbetapart xc7z020 
+Command         license_isbetapart done; error code: 1; 
+Execute         get_default_platform 
+Execute         config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+Execute       get_default_platform 
+Execute     get_default_platform 
+Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
+Execute     config_chip_info -quiet -speed slow 
+Command   open_solution done; 0.3 sec.
+Execute   csim_design -quiet 
+Execute     source /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/TB.cpp 
+Execute     is_xip /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/TB.cpp 
+Execute     is_encrypted /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/lenet5.cpp 
+Execute     is_xip /home/hadee/Work/Project/FPGA/Zynqconn2/zynqconn/lenet5.cpp 
+Execute     get_default_platform 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.49 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 7.36 sec.
+Command ap_source done; 7.67 sec.
+Execute cleanup_all 

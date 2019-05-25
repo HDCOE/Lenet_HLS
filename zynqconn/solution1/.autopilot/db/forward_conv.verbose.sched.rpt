@@ -1,0 +1,318 @@
+
+
+================================================================
+== Vivado HLS Report for 'forward_conv'
+================================================================
+* Date:           Fri May 24 00:15:42 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        zynqconn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.690|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |          Loop Name          | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1                     |    ?|    ?|         ?|          -|          -|     6|    no    |
+        | + Loop 1.1                  |    ?|    ?|         ?|          -|          -|    28|    no    |
+        |  ++ Loop 1.1.1              |    ?|    ?|         ?|          -|          -|    28|    no    |
+        |   +++ Loop 1.1.1.1          |    ?|    ?|         ?|          -|          -|     1|    no    |
+        |    ++++ Loop 1.1.1.1.1      |    ?|    ?|         ?|          -|          -|     ?|    no    |
+        |     +++++ Loop 1.1.1.1.1.1  |    ?|    ?|         4|          -|          -|     ?|    no    |
+        +-----------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 11
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (!exitcond)
+4 --> 
+	5  / (!exitcond3)
+	3  / (exitcond3)
+5 --> 
+	6  / (!exitcond2)
+	4  / (exitcond2)
+6 --> 
+	7  / (!p_z_assign_1)
+	5  / (p_z_assign_1)
+7 --> 
+	8  / (tmp_97)
+	6  / (!tmp_97)
+8 --> 
+	9  / (tmp_98)
+	7  / (!tmp_98)
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	8  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 12 [2/2] (0.00ns)   --->   "call fastcc void @Padding([1024 x i16]* %conv_layer_5_6_1_0_32_32_1_inpad_data_V, [1024 x i16]* %conv_layer_5_6_1_0_32_32_1_input_data_V)" [zynqconn/CONV_layer.h:60]   --->   Operation 12 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 13 [1/2] (0.00ns)   --->   "call fastcc void @Padding([1024 x i16]* %conv_layer_5_6_1_0_32_32_1_inpad_data_V, [1024 x i16]* %conv_layer_5_6_1_0_32_32_1_input_data_V)" [zynqconn/CONV_layer.h:60]   --->   Operation 13 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 14 [1/1] (1.76ns)   --->   "br label %.loopexit" [zynqconn/CONV_layer.h:62]   --->   Operation 14 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 1.91>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%p_z_assign = phi i3 [ 0, %0 ], [ %idx_filter, %.loopexit.loopexit ]"   --->   Operation 15 'phi' 'p_z_assign' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%phi_mul = phi i8 [ 0, %0 ], [ %next_mul, %.loopexit.loopexit ]"   --->   Operation 16 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%phi_mul1 = phi i13 [ 0, %0 ], [ %next_mul2, %.loopexit.loopexit ]"   --->   Operation 17 'phi' 'phi_mul1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%phi_mul_cast = zext i8 %phi_mul to i9"   --->   Operation 18 'zext' 'phi_mul_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "%phi_mul1_cast = zext i13 %phi_mul1 to i14"   --->   Operation 19 'zext' 'phi_mul1_cast' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (1.67ns)   --->   "%next_mul2 = add i13 %phi_mul1, 784"   --->   Operation 20 'add' 'next_mul2' <Predicate = true> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 21 [1/1] (1.91ns)   --->   "%next_mul = add i8 %phi_mul, 25"   --->   Operation 21 'add' 'next_mul' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 22 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %p_z_assign, -2" [zynqconn/CONV_layer.h:62]   --->   Operation 22 'icmp' 'exitcond' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 6, i64 6, i64 6)"   --->   Operation 23 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (1.65ns)   --->   "%idx_filter = add i3 %p_z_assign, 1" [zynqconn/CONV_layer.h:62]   --->   Operation 24 'add' 'idx_filter' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %2, label %.preheader179.preheader" [zynqconn/CONV_layer.h:62]   --->   Operation 25 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 26 [1/1] (1.76ns)   --->   "br label %.preheader179" [zynqconn/CONV_layer.h:75]   --->   Operation 26 'br' <Predicate = (!exitcond)> <Delay = 1.76>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 27 'ret' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 1.78>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%v_4 = phi i5 [ %idx_y, %.preheader179.loopexit ], [ 0, %.preheader179.preheader ]"   --->   Operation 28 'phi' 'v_4' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%v_4_cast1 = zext i5 %v_4 to i11" [zynqconn/CONV_layer.h:75]   --->   Operation 29 'zext' 'v_4_cast1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%v_4_cast9 = zext i5 %v_4 to i32" [zynqconn/CONV_layer.h:75]   --->   Operation 30 'zext' 'v_4_cast9' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%v_4_cast = zext i5 %v_4 to i6" [zynqconn/CONV_layer.h:75]   --->   Operation 31 'zext' 'v_4_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%empty_78 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28)"   --->   Operation 32 'speclooptripcount' 'empty_78' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (1.36ns)   --->   "%exitcond3 = icmp eq i5 %v_4, -4" [zynqconn/CONV_layer.h:64]   --->   Operation 33 'icmp' 'exitcond3' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 34 [1/1] (1.78ns)   --->   "%idx_y = add i5 %v_4, 1" [zynqconn/CONV_layer.h:64]   --->   Operation 34 'add' 'idx_y' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %.loopexit.loopexit, label %.preheader.preheader" [zynqconn/CONV_layer.h:64]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (1.78ns)   --->   "%tmp_s = add i6 %v_4_cast, 5" [zynqconn/CONV_layer.h:75]   --->   Operation 36 'add' 'tmp_s' <Predicate = (!exitcond3)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_107_cast = zext i6 %tmp_s to i32" [zynqconn/CONV_layer.h:75]   --->   Operation 37 'zext' 'tmp_107_cast' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (1.76ns)   --->   "br label %.preheader" [zynqconn/CONV_layer.h:76]   --->   Operation 38 'br' <Predicate = (!exitcond3)> <Delay = 1.76>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 39 'br' <Predicate = (exitcond3)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 1.78>
+ST_5 : Operation 40 [1/1] (0.00ns)   --->   "%ho_2 = phi i5 [ %idx_x, %_ZN13ap_fixed_baseILi17ELi5ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi4ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit9.i ], [ 0, %.preheader.preheader ]"   --->   Operation 40 'phi' 'ho_2' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 41 [1/1] (0.00ns)   --->   "%ho_2_cast6 = zext i5 %ho_2 to i32" [zynqconn/CONV_layer.h:76]   --->   Operation 41 'zext' 'ho_2_cast6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "%ho_2_cast = zext i5 %ho_2 to i6" [zynqconn/CONV_layer.h:76]   --->   Operation 42 'zext' 'ho_2_cast' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 43 [1/1] (0.00ns)   --->   "%empty_79 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 28, i64 28, i64 28)"   --->   Operation 43 'speclooptripcount' 'empty_79' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 44 [1/1] (1.36ns)   --->   "%exitcond2 = icmp eq i5 %ho_2, -4" [zynqconn/CONV_layer.h:66]   --->   Operation 44 'icmp' 'exitcond2' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 45 [1/1] (1.78ns)   --->   "%idx_x = add i5 %ho_2, 1" [zynqconn/CONV_layer.h:66]   --->   Operation 45 'add' 'idx_x' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "br i1 %exitcond2, label %.preheader179.loopexit, label %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.preheader" [zynqconn/CONV_layer.h:66]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 47 [1/1] (1.78ns)   --->   "%tmp_93 = add i6 %ho_2_cast, 5" [zynqconn/CONV_layer.h:76]   --->   Operation 47 'add' 'tmp_93' <Predicate = (!exitcond2)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_109_cast = zext i6 %tmp_93 to i32" [zynqconn/CONV_layer.h:76]   --->   Operation 48 'zext' 'tmp_109_cast' <Predicate = (!exitcond2)> <Delay = 0.00>
+ST_5 : Operation 49 [1/1] (1.76ns)   --->   "br label %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit"   --->   Operation 49 'br' <Predicate = (!exitcond2)> <Delay = 1.76>
+ST_5 : Operation 50 [1/1] (0.00ns)   --->   "br label %.preheader179"   --->   Operation 50 'br' <Predicate = (exitcond2)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 8.69>
+ST_6 : Operation 51 [1/1] (0.00ns)   --->   "%p_Val2_s = phi i16 [ 0, %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.preheader ], [ %p_082_2, %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.loopexit ]" [zynqconn/CONV_layer.h:78]   --->   Operation 51 'phi' 'p_Val2_s' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 52 [1/1] (0.00ns)   --->   "%p_z_assign_1 = phi i1 [ false, %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.preheader ], [ true, %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.loopexit ]"   --->   Operation 52 'phi' 'p_z_assign_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 53 [1/1] (0.00ns)   --->   "%empty_80 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 53 'speclooptripcount' 'empty_80' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 54 [1/1] (0.00ns)   --->   "br i1 %p_z_assign_1, label %_ZN13ap_fixed_baseILi17ELi5ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi4ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit9.i, label %.preheader22.preheader" [zynqconn/CONV_layer.h:72]   --->   Operation 54 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 55 [1/1] (1.76ns)   --->   "br label %.preheader22" [zynqconn/CONV_layer.h:75]   --->   Operation 55 'br' <Predicate = (!p_z_assign_1)> <Delay = 1.76>
+ST_6 : Operation 56 [1/1] (0.00ns)   --->   "%p_shl8 = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %ho_2, i5 0)" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 56 'bitconcatenate' 'p_shl8' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 57 [1/1] (0.00ns)   --->   "%p_shl8_cast = zext i10 %p_shl8 to i11" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 57 'zext' 'p_shl8_cast' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 58 [1/1] (0.00ns)   --->   "%p_shl9 = call i7 @_ssdm_op_BitConcatenate.i7.i5.i2(i5 %ho_2, i2 0)" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 58 'bitconcatenate' 'p_shl9' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 59 [1/1] (0.00ns)   --->   "%p_shl9_cast = zext i7 %p_shl9 to i11" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 59 'zext' 'p_shl9_cast' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 60 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_94 = sub i11 %p_shl8_cast, %p_shl9_cast" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 60 'sub' 'tmp_94' <Predicate = (p_z_assign_1)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 61 [1/1] (3.75ns) (root node of TernaryAdder)   --->   "%tmp4 = add i11 %tmp_94, %v_4_cast1" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 61 'add' 'tmp4' <Predicate = (p_z_assign_1)> <Delay = 3.75> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%tmp4_cast = sext i11 %tmp4 to i14" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 62 'sext' 'tmp4_cast' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (1.67ns)   --->   "%tmp_95 = add i14 %phi_mul1_cast, %tmp4_cast" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 63 'add' 'tmp_95' <Predicate = (p_z_assign_1)> <Delay = 1.67> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%tmp_96 = sext i14 %tmp_95 to i64" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82]   --->   Operation 64 'sext' 'tmp_96' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%conv_layer_output_d = getelementptr [4704 x i16]* %conv_layer_5_6_1_0_32_32_1_output_data_V, i64 0, i64 %tmp_96" [zynqconn/CONV_layer.h:82]   --->   Operation 65 'getelementptr' 'conv_layer_output_d' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+ST_6 : Operation 66 [1/1] (3.25ns)   --->   "store i16 %p_Val2_s, i16* %conv_layer_output_d, align 2" [zynqconn/CONV_layer.h:82]   --->   Operation 66 'store' <Predicate = (p_z_assign_1)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4704> <RAM>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "br label %.preheader" [zynqconn/CONV_layer.h:66]   --->   Operation 67 'br' <Predicate = (p_z_assign_1)> <Delay = 0.00>
+
+State 7 <SV = 6> <Delay = 2.47>
+ST_7 : Operation 68 [1/1] (0.00ns)   --->   "%p_082_2 = phi i16 [ %p_Val2_3, %1 ], [ %p_Val2_s, %.preheader22.preheader ]"   --->   Operation 68 'phi' 'p_082_2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 69 [1/1] (0.00ns)   --->   "%p_x_assign_5 = phi i32 [ %v, %1 ], [ %v_4_cast9, %.preheader22.preheader ]"   --->   Operation 69 'phi' 'p_x_assign_5' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 70 [1/1] (2.47ns)   --->   "%tmp_97 = icmp slt i32 %p_x_assign_5, %tmp_107_cast" [zynqconn/CONV_layer.h:75]   --->   Operation 70 'icmp' 'tmp_97' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 71 [1/1] (0.00ns)   --->   "br i1 %tmp_97, label %.preheader21.preheader, label %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit.loopexit" [zynqconn/CONV_layer.h:75]   --->   Operation 71 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 72 [1/1] (1.76ns)   --->   "br label %.preheader21" [zynqconn/CONV_layer.h:76]   --->   Operation 72 'br' <Predicate = (tmp_97)> <Delay = 1.76>
+ST_7 : Operation 73 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit"   --->   Operation 73 'br' <Predicate = (!tmp_97)> <Delay = 0.00>
+
+State 8 <SV = 7> <Delay = 6.92>
+ST_8 : Operation 74 [1/1] (0.00ns)   --->   "%p_Val2_3 = phi i16 [ %output_c_V, %_ZN13ap_fixed_baseILi33ELi9ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi4ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i ], [ %p_082_2, %.preheader21.preheader ]"   --->   Operation 74 'phi' 'p_Val2_3' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 75 [1/1] (0.00ns)   --->   "%p_y_assign_5 = phi i32 [ %ho, %_ZN13ap_fixed_baseILi33ELi9ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi4ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i ], [ %ho_2_cast6, %.preheader21.preheader ]"   --->   Operation 75 'phi' 'p_y_assign_5' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 76 [1/1] (2.47ns)   --->   "%tmp_98 = icmp slt i32 %p_y_assign_5, %tmp_109_cast" [zynqconn/CONV_layer.h:76]   --->   Operation 76 'icmp' 'tmp_98' <Predicate = true> <Delay = 2.47> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 77 [1/1] (0.00ns)   --->   "br i1 %tmp_98, label %_ZN13ap_fixed_baseILi33ELi9ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi16ELi4ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit.i.i, label %1" [zynqconn/CONV_layer.h:76]   --->   Operation 77 'br' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node tmp1)   --->   "%tmp = shl i32 %p_y_assign_5, 5" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 78 'shl' 'tmp' <Predicate = (tmp_98)> <Delay = 0.00>
+ST_8 : Operation 79 [1/1] (2.55ns) (out node of the LUT)   --->   "%tmp1 = add i32 %p_x_assign_5, %tmp" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 79 'add' 'tmp1' <Predicate = (tmp_98)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 80 [1/1] (0.00ns)   --->   "%tmp_99 = sext i32 %tmp1 to i64" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 80 'sext' 'tmp_99' <Predicate = (tmp_98)> <Delay = 0.00>
+ST_8 : Operation 81 [1/1] (2.55ns)   --->   "%p_y_assign_6 = sub nsw i32 %p_y_assign_5, %ho_2_cast6" [zynqconn/CONV_layer.h:78]   --->   Operation 81 'sub' 'p_y_assign_6' <Predicate = (tmp_98)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 82 [1/1] (0.00ns)   --->   "%tmp_67 = shl i32 %p_y_assign_6, 2" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 82 'shl' 'tmp_67' <Predicate = (tmp_98)> <Delay = 0.00>
+ST_8 : Operation 83 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp2 = add i32 %tmp_67, %p_y_assign_6" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 83 'add' 'tmp2' <Predicate = (tmp_98)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 84 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp_100 = add i32 %p_x_assign_5, %tmp2" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 84 'add' 'tmp_100' <Predicate = (tmp_98)> <Delay = 4.37> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_8 : Operation 85 [1/1] (0.00ns)   --->   "%tmp_68 = trunc i32 %tmp_100 to i9" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 85 'trunc' 'tmp_68' <Predicate = (tmp_98)> <Delay = 0.00>
+ST_8 : Operation 86 [1/1] (0.00ns)   --->   "%conv_layer_inpad_da = getelementptr [1024 x i16]* %conv_layer_5_6_1_0_32_32_1_inpad_data_V, i64 0, i64 %tmp_99" [zynqconn/CONV_layer.h:78]   --->   Operation 86 'getelementptr' 'conv_layer_inpad_da' <Predicate = (tmp_98)> <Delay = 0.00>
+ST_8 : Operation 87 [2/2] (3.25ns)   --->   "%conv_layer_inpad_da_3 = load i16* %conv_layer_inpad_da, align 2" [zynqconn/CONV_layer.h:78]   --->   Operation 87 'load' 'conv_layer_inpad_da_3' <Predicate = (tmp_98)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4704> <RAM>
+ST_8 : Operation 88 [1/1] (2.55ns)   --->   "%ho = add nsw i32 1, %p_y_assign_5" [zynqconn/CONV_layer.h:76]   --->   Operation 88 'add' 'ho' <Predicate = (tmp_98)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 89 [1/1] (2.55ns)   --->   "%v = add nsw i32 %p_x_assign_5, 1" [zynqconn/CONV_layer.h:75]   --->   Operation 89 'add' 'v' <Predicate = (!tmp_98)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.67> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 90 [1/1] (0.00ns)   --->   "br label %.preheader22" [zynqconn/CONV_layer.h:75]   --->   Operation 90 'br' <Predicate = (!tmp_98)> <Delay = 0.00>
+
+State 9 <SV = 8> <Delay = 6.95>
+ST_9 : Operation 91 [1/1] (0.00ns)   --->   "%tmp_69 = zext i5 %v_4 to i9" [zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78]   --->   Operation 91 'zext' 'tmp_69' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 92 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp_70 = sub i9 %tmp_68, %tmp_69" [zynqconn/CONV_layer.h:78]   --->   Operation 92 'sub' 'tmp_70' <Predicate = true> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_9 : Operation 93 [1/1] (3.69ns) (root node of TernaryAdder)   --->   "%tmp_101 = add i9 %tmp_70, %phi_mul_cast" [zynqconn/CONV_layer.h:78]   --->   Operation 93 'add' 'tmp_101' <Predicate = true> <Delay = 3.69> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.87> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_9 : Operation 94 [1/1] (0.00ns)   --->   "%tmp_128_cast = zext i9 %tmp_101 to i64" [zynqconn/CONV_layer.h:78]   --->   Operation 94 'zext' 'tmp_128_cast' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 95 [1/1] (0.00ns)   --->   "%conv_layer_W_data_V = getelementptr [150 x i16]* %conv_layer_5_6_1_0_32_32_1_W_data_V, i64 0, i64 %tmp_128_cast" [zynqconn/CONV_layer.h:78]   --->   Operation 95 'getelementptr' 'conv_layer_W_data_V' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 96 [1/2] (3.25ns)   --->   "%conv_layer_inpad_da_3 = load i16* %conv_layer_inpad_da, align 2" [zynqconn/CONV_layer.h:78]   --->   Operation 96 'load' 'conv_layer_inpad_da_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4704> <RAM>
+ST_9 : Operation 97 [2/2] (3.25ns)   --->   "%conv_layer_W_data_V_3 = load i16* %conv_layer_W_data_V, align 2" [zynqconn/CONV_layer.h:78]   --->   Operation 97 'load' 'conv_layer_W_data_V_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4704> <RAM>
+
+State 10 <SV = 9> <Delay = 3.25>
+ST_10 : Operation 98 [1/2] (3.25ns)   --->   "%conv_layer_W_data_V_3 = load i16* %conv_layer_W_data_V, align 2" [zynqconn/CONV_layer.h:78]   --->   Operation 98 'load' 'conv_layer_W_data_V_3' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 4704> <RAM>
+
+State 11 <SV = 10> <Delay = 6.38>
+ST_11 : Operation 99 [1/1] (0.00ns)   --->   "%r_V = sext i16 %conv_layer_inpad_da_3 to i28" [zynqconn/CONV_layer.h:78]   --->   Operation 99 'sext' 'r_V' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 100 [1/1] (0.00ns)   --->   "%tmp_102 = sext i16 %conv_layer_W_data_V_3 to i28" [zynqconn/CONV_layer.h:78]   --->   Operation 100 'sext' 'tmp_102' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 101 [1/1] (3.36ns) (grouped into DSP with root node ret_V)   --->   "%r_V_2 = mul i28 %r_V, %tmp_102" [zynqconn/CONV_layer.h:78]   --->   Operation 101 'mul' 'r_V_2' <Predicate = true> <Delay = 3.36> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 102 [1/1] (0.00ns)   --->   "%lhs_V = call i28 @_ssdm_op_BitConcatenate.i28.i16.i12(i16 %p_Val2_3, i12 0)" [zynqconn/CONV_layer.h:78]   --->   Operation 102 'bitconcatenate' 'lhs_V' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 103 [1/1] (3.02ns) (root node of the DSP)   --->   "%ret_V = add i28 %lhs_V, %r_V_2" [zynqconn/CONV_layer.h:78]   --->   Operation 103 'add' 'ret_V' <Predicate = true> <Delay = 3.02> <Core = "DSP48">   --->   Core 65 'DSP48' <Latency = 0> <II = 1> <Delay = 6.38> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 104 [1/1] (0.00ns)   --->   "%output_c_V = call i16 @_ssdm_op_PartSelect.i16.i28.i32.i32(i28 %ret_V, i32 12, i32 27)" [zynqconn/CONV_layer.h:78]   --->   Operation 104 'partselect' 'output_c_V' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 105 [1/1] (0.00ns)   --->   "br label %.preheader21" [zynqconn/CONV_layer.h:76]   --->   Operation 105 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('idx_filter') with incoming values : ('idx_filter', zynqconn/CONV_layer.h:62) [8]  (1.77 ns)
+
+ <State 3>: 1.92ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [9]  (0 ns)
+	'add' operation ('next_mul') [14]  (1.92 ns)
+
+ <State 4>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('idx_y') with incoming values : ('idx_y', zynqconn/CONV_layer.h:64) [22]  (0 ns)
+	'add' operation ('tmp_s', zynqconn/CONV_layer.h:75) [31]  (1.78 ns)
+
+ <State 5>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('idx_x') with incoming values : ('idx_x', zynqconn/CONV_layer.h:66) [35]  (0 ns)
+	'add' operation ('tmp_93', zynqconn/CONV_layer.h:76) [43]  (1.78 ns)
+
+ <State 6>: 8.69ns
+The critical path consists of the following:
+	'sub' operation ('tmp_94', zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82) [100]  (0 ns)
+	'add' operation ('tmp4', zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82) [101]  (3.76 ns)
+	'add' operation ('tmp_95', zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:82) [103]  (1.68 ns)
+	'getelementptr' operation ('conv_layer_output_d', zynqconn/CONV_layer.h:82) [105]  (0 ns)
+	'store' operation (zynqconn/CONV_layer.h:82) of variable '__Val2__', zynqconn/CONV_layer.h:78 on array 'conv_layer_5_6_1_0_32_32_1_output_data_V' [106]  (3.25 ns)
+
+ <State 7>: 2.47ns
+The critical path consists of the following:
+	'phi' operation ('v') with incoming values : ('v_4_cast9', zynqconn/CONV_layer.h:75) ('v', zynqconn/CONV_layer.h:75) [55]  (0 ns)
+	'icmp' operation ('tmp_97', zynqconn/CONV_layer.h:75) [56]  (2.47 ns)
+
+ <State 8>: 6.92ns
+The critical path consists of the following:
+	'phi' operation ('ho') with incoming values : ('ho_2_cast6', zynqconn/CONV_layer.h:76) ('ho', zynqconn/CONV_layer.h:76) [62]  (0 ns)
+	'sub' operation ('_y', zynqconn/CONV_layer.h:78) [69]  (2.55 ns)
+	'add' operation ('tmp2', zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78) [71]  (0 ns)
+	'add' operation ('tmp_100', zynqconn/Tensor.h:36->zynqconn/CONV_layer.h:78) [72]  (4.37 ns)
+
+ <State 9>: 6.95ns
+The critical path consists of the following:
+	'sub' operation ('tmp_70', zynqconn/CONV_layer.h:78) [75]  (0 ns)
+	'add' operation ('tmp_101', zynqconn/CONV_layer.h:78) [76]  (3.7 ns)
+	'getelementptr' operation ('conv_layer_W_data_V', zynqconn/CONV_layer.h:78) [78]  (0 ns)
+	'load' operation ('conv_layer_W_data_V_3', zynqconn/CONV_layer.h:78) on array 'conv_layer_5_6_1_0_32_32_1_W_data_V' [82]  (3.25 ns)
+
+ <State 10>: 3.25ns
+The critical path consists of the following:
+	'load' operation ('conv_layer_W_data_V_3', zynqconn/CONV_layer.h:78) on array 'conv_layer_5_6_1_0_32_32_1_W_data_V' [82]  (3.25 ns)
+
+ <State 11>: 6.38ns
+The critical path consists of the following:
+	'mul' operation of DSP[86] ('r_V_2', zynqconn/CONV_layer.h:78) [84]  (3.36 ns)
+	'add' operation of DSP[86] ('ret.V', zynqconn/CONV_layer.h:78) [86]  (3.02 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

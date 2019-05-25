@@ -1,0 +1,280 @@
+
+
+================================================================
+== Vivado HLS Report for 'forward_1'
+================================================================
+* Date:           Fri May 24 00:15:45 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        zynqconn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.080|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                 |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1         |  800|  800|         2|          -|          -|   400|    no    |
+        |- Loop 2         |  860|  860|       172|          -|          -|     5|    no    |
+        | + Loop 2.1      |  170|  170|        34|          -|          -|     5|    no    |
+        |  ++ Loop 2.1.1  |   32|   32|         2|          -|          -|    16|    no    |
+        |- Loop 3         |  800|  800|         2|          -|          -|   400|    no    |
+        +-----------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 10
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / (!tmp)
+	5  / (tmp)
+4 --> 
+	3  / true
+5 --> 
+	6  / (!exitcond1_i)
+	9  / (exitcond1_i)
+6 --> 
+	7  / (!exitcond2_i)
+	5  / (exitcond2_i)
+7 --> 
+	8  / (!exitcond_i)
+	6  / (exitcond_i)
+8 --> 
+	7  / true
+9 --> 
+	10  / (!tmp_s)
+10 --> 
+	9  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 11 [2/2] (0.00ns)   --->   "call fastcc void @forward_pool.1([1600 x i16]* %pool_layer_2_2_1_10_10_16_input_data_V, [400 x i16]* %pool_layer_2_2_1_10_10_16_output_data_V)" [zynqconn/POOLING_layer.h:23]   --->   Operation 11 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 12 [1/2] (0.00ns)   --->   "call fastcc void @forward_pool.1([1600 x i16]* %pool_layer_2_2_1_10_10_16_input_data_V, [400 x i16]* %pool_layer_2_2_1_10_10_16_output_data_V)" [zynqconn/POOLING_layer.h:23]   --->   Operation 12 'call' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 13 [1/1] (1.76ns)   --->   "br label %1" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 13 'br' <Predicate = true> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 3.25>
+ST_3 : Operation 14 [1/1] (0.00ns)   --->   "%p_i0_0_i = phi i9 [ 0, %0 ], [ %p_i0, %2 ]"   --->   Operation 14 'phi' 'p_i0_0_i' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%p_i0_0_i_cast7 = zext i9 %p_i0_0_i to i64" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 15 'zext' 'p_i0_0_i_cast7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (1.66ns)   --->   "%tmp = icmp eq i9 %p_i0_0_i, -112" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 16 'icmp' 'tmp' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400)"   --->   Operation 17 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (1.82ns)   --->   "%p_i0 = add i9 %p_i0_0_i, 1" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 18 'add' 'p_i0' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 19 [1/1] (0.00ns)   --->   "br i1 %tmp, label %"operator=.exit.preheader", label %2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 19 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%pool_layer_output_d = getelementptr [400 x i16]* %pool_layer_2_2_1_10_10_16_output_data_V, i64 0, i64 %p_i0_0_i_cast7" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 20 'getelementptr' 'pool_layer_output_d' <Predicate = (!tmp)> <Delay = 0.00>
+ST_3 : Operation 21 [2/2] (3.25ns)   --->   "%pool_layer_output_d_1 = load i16* %pool_layer_output_d, align 2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 21 'load' 'pool_layer_output_d_1' <Predicate = (!tmp)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_3 : Operation 22 [1/1] (1.76ns)   --->   "br label %"operator=.exit"" [zynqconn/Tensor.h:34->zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 22 'br' <Predicate = (tmp)> <Delay = 1.76>
+
+State 4 <SV = 3> <Delay = 6.50>
+ST_4 : Operation 23 [1/2] (3.25ns)   --->   "%pool_layer_output_d_1 = load i16* %pool_layer_output_d, align 2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 23 'load' 'pool_layer_output_d_1' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%pool_layer_relu1_inp = getelementptr [400 x i16]* %pool_layer_2_2_1_10_10_16_relu1_input_data_V, i64 0, i64 %p_i0_0_i_cast7" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 24 'getelementptr' 'pool_layer_relu1_inp' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 25 [1/1] (3.25ns)   --->   "store i16 %pool_layer_output_d_1, i16* %pool_layer_relu1_inp, align 2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 25 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "br label %1" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+
+State 5 <SV = 3> <Delay = 1.76>
+ST_5 : Operation 27 [1/1] (0.00ns)   --->   "%p_x_assign = phi i3 [ %ix, %"operator=.exit.loopexit" ], [ 0, %"operator=.exit.preheader" ]"   --->   Operation 27 'phi' 'p_x_assign' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 28 [1/1] (0.00ns)   --->   "%p_x_assign_cast6 = zext i3 %p_x_assign to i9" [zynqconn/Tensor.h:34->zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 28 'zext' 'p_x_assign_cast6' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 29 [1/1] (1.13ns)   --->   "%exitcond1_i = icmp eq i3 %p_x_assign, -3" [zynqconn/RELU_layer.h:20->zynqconn/POOLING_layer.h:25]   --->   Operation 29 'icmp' 'exitcond1_i' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%empty_91 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 30 'speclooptripcount' 'empty_91' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 31 [1/1] (1.65ns)   --->   "%ix = add i3 %p_x_assign, 1" [zynqconn/RELU_layer.h:20->zynqconn/POOLING_layer.h:25]   --->   Operation 31 'add' 'ix' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 32 [1/1] (0.00ns)   --->   "br i1 %exitcond1_i, label %forward.exit.preheader, label %.preheader62.i.preheader" [zynqconn/RELU_layer.h:20->zynqconn/POOLING_layer.h:25]   --->   Operation 32 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 33 [1/1] (1.76ns)   --->   "br label %.preheader62.i" [zynqconn/Tensor.h:34->zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 33 'br' <Predicate = (!exitcond1_i)> <Delay = 1.76>
+ST_5 : Operation 34 [1/1] (1.76ns)   --->   "br label %forward.exit" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 34 'br' <Predicate = (exitcond1_i)> <Delay = 1.76>
+
+State 6 <SV = 4> <Delay = 1.78>
+ST_6 : Operation 35 [1/1] (0.00ns)   --->   "%p_y_assign = phi i3 [ %iy, %.preheader62.i.loopexit ], [ 0, %.preheader62.i.preheader ]"   --->   Operation 35 'phi' 'p_y_assign' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 36 [1/1] (0.00ns)   --->   "%p_y_assign_cast5 = zext i3 %p_y_assign to i5" [zynqconn/Tensor.h:34->zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 36 'zext' 'p_y_assign_cast5' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 37 [1/1] (1.13ns)   --->   "%exitcond2_i = icmp eq i3 %p_y_assign, -3" [zynqconn/RELU_layer.h:21->zynqconn/POOLING_layer.h:25]   --->   Operation 37 'icmp' 'exitcond2_i' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 38 [1/1] (0.00ns)   --->   "%empty_92 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 5, i64 5, i64 5)"   --->   Operation 38 'speclooptripcount' 'empty_92' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 39 [1/1] (1.65ns)   --->   "%iy = add i3 %p_y_assign, 1" [zynqconn/RELU_layer.h:21->zynqconn/POOLING_layer.h:25]   --->   Operation 39 'add' 'iy' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 40 [1/1] (0.00ns)   --->   "br i1 %exitcond2_i, label %"operator=.exit.loopexit", label %.preheader.i.preheader" [zynqconn/RELU_layer.h:21->zynqconn/POOLING_layer.h:25]   --->   Operation 40 'br' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 41 [1/1] (0.00ns)   --->   "%p_shl_i = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %p_y_assign, i2 0)" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 41 'bitconcatenate' 'p_shl_i' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_6 : Operation 42 [1/1] (1.78ns)   --->   "%tmp1 = add i5 %p_y_assign_cast5, %p_shl_i" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 42 'add' 'tmp1' <Predicate = (!exitcond2_i)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 43 [1/1] (0.00ns)   --->   "%tmp1_cast = zext i5 %tmp1 to i9" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 43 'zext' 'tmp1_cast' <Predicate = (!exitcond2_i)> <Delay = 0.00>
+ST_6 : Operation 44 [1/1] (1.76ns)   --->   "br label %.preheader.i" [zynqconn/Tensor.h:34->zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 44 'br' <Predicate = (!exitcond2_i)> <Delay = 1.76>
+ST_6 : Operation 45 [1/1] (0.00ns)   --->   "br label %"operator=.exit""   --->   Operation 45 'br' <Predicate = (exitcond2_i)> <Delay = 0.00>
+
+State 7 <SV = 5> <Delay = 6.95>
+ST_7 : Operation 46 [1/1] (0.00ns)   --->   "%p_z_assign = phi i5 [ %iz, %_ZltILi16ELi4ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbRK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EEi.exit.i ], [ 0, %.preheader.i.preheader ]"   --->   Operation 46 'phi' 'p_z_assign' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 47 [1/1] (0.00ns)   --->   "%phi_mul = phi i9 [ %next_mul, %_ZltILi16ELi4ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbRK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EEi.exit.i ], [ 0, %.preheader.i.preheader ]"   --->   Operation 47 'phi' 'phi_mul' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 48 [1/1] (1.36ns)   --->   "%exitcond_i = icmp eq i5 %p_z_assign, -16" [zynqconn/RELU_layer.h:22->zynqconn/POOLING_layer.h:25]   --->   Operation 48 'icmp' 'exitcond_i' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 49 [1/1] (0.00ns)   --->   "%empty_93 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 49 'speclooptripcount' 'empty_93' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 50 [1/1] (1.78ns)   --->   "%iz = add i5 %p_z_assign, 1" [zynqconn/RELU_layer.h:22->zynqconn/POOLING_layer.h:25]   --->   Operation 50 'add' 'iz' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 51 [1/1] (0.00ns)   --->   "br i1 %exitcond_i, label %.preheader62.i.loopexit, label %_ZltILi16ELi4ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEbRK13ap_fixed_baseIXT_EXT0_EXT1_EXT2_EXT3_EXT4_EEi.exit.i" [zynqconn/RELU_layer.h:22->zynqconn/POOLING_layer.h:25]   --->   Operation 51 'br' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 52 [1/1] (1.82ns)   --->   "%next_mul = add i9 25, %phi_mul"   --->   Operation 52 'add' 'next_mul' <Predicate = (!exitcond_i)> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 53 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp2 = add i9 %p_x_assign_cast6, %phi_mul" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 53 'add' 'tmp2' <Predicate = (!exitcond_i)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.84> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 54 [1/1] (3.69ns) (root node of TernaryAdder)   --->   "%tmp_3_i = add i9 %tmp2, %tmp1_cast" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 54 'add' 'tmp_3_i' <Predicate = (!exitcond_i)> <Delay = 3.69> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.84> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_7 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_4_i = zext i9 %tmp_3_i to i64" [zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 55 'zext' 'tmp_4_i' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_7 : Operation 56 [1/1] (0.00ns)   --->   "%pool_layer_relu1_inp_1 = getelementptr [400 x i16]* %pool_layer_2_2_1_10_10_16_relu1_input_data_V, i64 0, i64 %tmp_4_i" [zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 56 'getelementptr' 'pool_layer_relu1_inp_1' <Predicate = (!exitcond_i)> <Delay = 0.00>
+ST_7 : Operation 57 [2/2] (3.25ns)   --->   "%temp_V = load i16* %pool_layer_relu1_inp_1, align 2" [zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 57 'load' 'temp_V' <Predicate = (!exitcond_i)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_7 : Operation 58 [1/1] (0.00ns)   --->   "br label %.preheader62.i"   --->   Operation 58 'br' <Predicate = (exitcond_i)> <Delay = 0.00>
+
+State 8 <SV = 6> <Delay = 7.26>
+ST_8 : Operation 59 [1/2] (3.25ns)   --->   "%temp_V = load i16* %pool_layer_relu1_inp_1, align 2" [zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 59 'load' 'temp_V' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_8 : Operation 60 [1/1] (0.00ns)   --->   "%tmp_77 = trunc i16 %temp_V to i15" [zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25]   --->   Operation 60 'trunc' 'tmp_77' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 61 [1/1] (0.00ns)   --->   "%tmp_78 = call i1 @_ssdm_op_BitSelect.i1.i16.i32(i16 %temp_V, i32 15)" [zynqconn/RELU_layer.h:26->zynqconn/POOLING_layer.h:25]   --->   Operation 61 'bitselect' 'tmp_78' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 62 [1/1] (0.00ns)   --->   "%pool_layer_relu1_out = getelementptr [400 x i15]* %pool_layer_2_2_1_10_10_16_relu1_output_data_V, i64 0, i64 %tmp_4_i" [zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 62 'getelementptr' 'pool_layer_relu1_out' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 63 [1/1] (0.75ns)   --->   "%temp_V_2 = select i1 %tmp_78, i15 0, i15 %tmp_77" [zynqconn/RELU_layer.h:26->zynqconn/POOLING_layer.h:25]   --->   Operation 63 'select' 'temp_V_2' <Predicate = true> <Delay = 0.75> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.75> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_8 : Operation 64 [1/1] (3.25ns)   --->   "store i15 %temp_V_2, i15* %pool_layer_relu1_out, align 2" [zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25]   --->   Operation 64 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_8 : Operation 65 [1/1] (0.00ns)   --->   "br label %.preheader.i" [zynqconn/RELU_layer.h:22->zynqconn/POOLING_layer.h:25]   --->   Operation 65 'br' <Predicate = true> <Delay = 0.00>
+
+State 9 <SV = 4> <Delay = 3.25>
+ST_9 : Operation 66 [1/1] (0.00ns)   --->   "%p_i0_0_i1 = phi i9 [ %p_i0_2, %3 ], [ 0, %forward.exit.preheader ]"   --->   Operation 66 'phi' 'p_i0_0_i1' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 67 [1/1] (0.00ns)   --->   "%p_i0_0_i1_cast3 = zext i9 %p_i0_0_i1 to i64" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 67 'zext' 'p_i0_0_i1_cast3' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 68 [1/1] (1.66ns)   --->   "%tmp_s = icmp eq i9 %p_i0_0_i1, -112" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 68 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.66> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.66> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 69 [1/1] (0.00ns)   --->   "%empty_94 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 400, i64 400, i64 400)"   --->   Operation 69 'speclooptripcount' 'empty_94' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 70 [1/1] (1.82ns)   --->   "%p_i0_2 = add i9 %p_i0_0_i1, 1" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 70 'add' 'p_i0_2' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.82> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 71 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %"operator=.exit2", label %3" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 71 'br' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 72 [1/1] (0.00ns)   --->   "%pool_layer_relu1_out_1 = getelementptr [400 x i15]* %pool_layer_2_2_1_10_10_16_relu1_output_data_V, i64 0, i64 %p_i0_0_i1_cast3" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 72 'getelementptr' 'pool_layer_relu1_out_1' <Predicate = (!tmp_s)> <Delay = 0.00>
+ST_9 : Operation 73 [2/2] (3.25ns)   --->   "%pool_layer_relu1_out_2 = load i15* %pool_layer_relu1_out_1, align 2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 73 'load' 'pool_layer_relu1_out_2' <Predicate = (!tmp_s)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_9 : Operation 74 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 74 'ret' <Predicate = (tmp_s)> <Delay = 0.00>
+
+State 10 <SV = 5> <Delay = 6.50>
+ST_10 : Operation 75 [1/2] (3.25ns)   --->   "%pool_layer_relu1_out_2 = load i15* %pool_layer_relu1_out_1, align 2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 75 'load' 'pool_layer_relu1_out_2' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_10 : Operation 76 [1/1] (0.00ns)   --->   "%extLd = zext i15 %pool_layer_relu1_out_2 to i16" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 76 'zext' 'extLd' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 77 [1/1] (0.00ns)   --->   "%pool_layer_output_d_2 = getelementptr [400 x i16]* %pool_layer_2_2_1_10_10_16_output_data_V, i64 0, i64 %p_i0_0_i1_cast3" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 77 'getelementptr' 'pool_layer_output_d_2' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 78 [1/1] (3.25ns)   --->   "store i16 %extLd, i16* %pool_layer_output_d_2, align 2" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 78 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 400> <RAM>
+ST_10 : Operation 79 [1/1] (0.00ns)   --->   "br label %forward.exit" [zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26]   --->   Operation 79 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 0ns
+The critical path consists of the following:
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('__i0') with incoming values : ('__i0', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24) [8]  (1.77 ns)
+
+ <State 3>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('__i0') with incoming values : ('__i0', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24) [8]  (0 ns)
+	'getelementptr' operation ('pool_layer_output_d', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24) [15]  (0 ns)
+	'load' operation ('pool_layer_output_d_1', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24) on array 'pool_layer_2_2_1_10_10_16_output_data_V' [16]  (3.25 ns)
+
+ <State 4>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('pool_layer_output_d_1', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24) on array 'pool_layer_2_2_1_10_10_16_output_data_V' [16]  (3.25 ns)
+	'store' operation (zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24) of variable 'pool_layer_output_d_1', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:24 on array 'pool_layer_2_2_1_10_10_16_relu1_input_data_V' [18]  (3.25 ns)
+
+ <State 5>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('iy') with incoming values : ('iy', zynqconn/RELU_layer.h:21->zynqconn/POOLING_layer.h:25) [32]  (1.77 ns)
+
+ <State 6>: 1.78ns
+The critical path consists of the following:
+	'phi' operation ('iy') with incoming values : ('iy', zynqconn/RELU_layer.h:21->zynqconn/POOLING_layer.h:25) [32]  (0 ns)
+	'add' operation ('tmp1', zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25) [40]  (1.78 ns)
+
+ <State 7>: 6.95ns
+The critical path consists of the following:
+	'phi' operation ('phi_mul') with incoming values : ('next_mul') [45]  (0 ns)
+	'add' operation ('tmp2', zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25) [52]  (0 ns)
+	'add' operation ('tmp_3_i', zynqconn/Tensor.h:36->zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25) [53]  (3.7 ns)
+	'getelementptr' operation ('pool_layer_relu1_inp_1', zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25) [55]  (0 ns)
+	'load' operation ('temp.V', zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25) on array 'pool_layer_2_2_1_10_10_16_relu1_input_data_V' [56]  (3.25 ns)
+
+ <State 8>: 7.26ns
+The critical path consists of the following:
+	'load' operation ('temp.V', zynqconn/RELU_layer.h:24->zynqconn/POOLING_layer.h:25) on array 'pool_layer_2_2_1_10_10_16_relu1_input_data_V' [56]  (3.25 ns)
+	'select' operation ('temp.V', zynqconn/RELU_layer.h:26->zynqconn/POOLING_layer.h:25) [60]  (0.754 ns)
+	'store' operation (zynqconn/RELU_layer.h:27->zynqconn/POOLING_layer.h:25) of variable 'temp.V', zynqconn/RELU_layer.h:26->zynqconn/POOLING_layer.h:25 on array 'pool_layer_2_2_1_10_10_16_relu1_output_data_V' [61]  (3.25 ns)
+
+ <State 9>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('__i0') with incoming values : ('__i0', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26) [70]  (0 ns)
+	'getelementptr' operation ('pool_layer_relu1_out_1', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26) [77]  (0 ns)
+	'load' operation ('pool_layer_relu1_out_2', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26) on array 'pool_layer_2_2_1_10_10_16_relu1_output_data_V' [78]  (3.25 ns)
+
+ <State 10>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('pool_layer_relu1_out_2', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26) on array 'pool_layer_2_2_1_10_10_16_relu1_output_data_V' [78]  (3.25 ns)
+	'store' operation (zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26) of variable 'extLd', zynqconn/Tensor.h:15->zynqconn/POOLING_layer.h:26 on array 'pool_layer_2_2_1_10_10_16_output_data_V' [81]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

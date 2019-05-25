@@ -1,0 +1,195 @@
+
+
+================================================================
+== Vivado HLS Report for 'Padding'
+================================================================
+* Date:           Fri May 24 00:15:42 2019
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        zynqconn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     6.508|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  2115|  2115|  2115|  2115|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------------+------+------+----------+-----------+-----------+------+----------+
+        |                 |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name    |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1         |  2114|  2114|      2114|          -|          -|     1|    no    |
+        | + Loop 1.1      |  2112|  2112|        66|          -|          -|    32|    no    |
+        |  ++ Loop 1.1.1  |    64|    64|         2|          -|          -|    32|    no    |
+        +-----------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 5
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!z)
+3 --> 
+	4  / (!exitcond3)
+	2  / (exitcond3)
+4 --> 
+	5  / (!exitcond)
+	3  / (exitcond)
+5 --> 
+	4  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 6 [1/1] (1.76ns)   --->   "br label %1" [zynqconn/lenet5.cpp:32]   --->   Operation 6 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.76>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%indvars_iv = phi i11 [ %indvars_iv_next, %4 ], [ 32, %0 ]" [zynqconn/lenet5.cpp:32]   --->   Operation 7 'phi' 'indvars_iv' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%idx = phi i11 [ %idx_6, %4 ], [ 0, %0 ]"   --->   Operation 8 'phi' 'idx' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%z = phi i1 [ true, %4 ], [ false, %0 ]"   --->   Operation 9 'phi' 'z' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 1, i64 1, i64 1)"   --->   Operation 10 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "br i1 %z, label %5, label %.preheader21.preheader" [zynqconn/lenet5.cpp:32]   --->   Operation 11 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.99ns)   --->   "%idx_6 = xor i11 %idx, -1024" [zynqconn/lenet5.cpp:39]   --->   Operation 12 'xor' 'idx_6' <Predicate = (!z)> <Delay = 0.99> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (1.76ns)   --->   "br label %.preheader21" [zynqconn/lenet5.cpp:33]   --->   Operation 13 'br' <Predicate = (!z)> <Delay = 1.76>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "ret void" [zynqconn/lenet5.cpp:44]   --->   Operation 14 'ret' <Predicate = (z)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.82>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%indvars_iv1 = phi i11 [ %indvars_iv_next2, %3 ], [ %indvars_iv, %.preheader21.preheader ]" [zynqconn/lenet5.cpp:33]   --->   Operation 15 'phi' 'indvars_iv1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%idx_1 = phi i11 [ %tmp_54, %3 ], [ %idx, %.preheader21.preheader ]" [zynqconn/lenet5.cpp:39]   --->   Operation 16 'phi' 'idx_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%y = phi i6 [ %y_1, %3 ], [ 0, %.preheader21.preheader ]"   --->   Operation 17 'phi' 'y' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%empty_136 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)"   --->   Operation 18 'speclooptripcount' 'empty_136' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 19 [1/1] (1.42ns)   --->   "%exitcond3 = icmp eq i6 %y, -32" [zynqconn/lenet5.cpp:33]   --->   Operation 19 'icmp' 'exitcond3' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 20 [1/1] (1.82ns)   --->   "%y_1 = add i6 %y, 1" [zynqconn/lenet5.cpp:33]   --->   Operation 20 'add' 'y_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "br i1 %exitcond3, label %4, label %.preheader.preheader" [zynqconn/lenet5.cpp:33]   --->   Operation 21 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%tmp_81 = trunc i6 %y to i5" [zynqconn/lenet5.cpp:33]   --->   Operation 22 'trunc' 'tmp_81' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%tmp_s = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %tmp_81, i5 0)" [zynqconn/lenet5.cpp:42]   --->   Operation 23 'bitconcatenate' 'tmp_s' <Predicate = (!exitcond3)> <Delay = 0.00>
+ST_3 : Operation 24 [1/1] (1.63ns)   --->   "%tmp_54 = add i11 32, %idx_1" [zynqconn/lenet5.cpp:39]   --->   Operation 24 'add' 'tmp_54' <Predicate = (!exitcond3)> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 25 [1/1] (1.76ns)   --->   "br label %.preheader" [zynqconn/lenet5.cpp:34]   --->   Operation 25 'br' <Predicate = (!exitcond3)> <Delay = 1.76>
+ST_3 : Operation 26 [1/1] (0.99ns)   --->   "%indvars_iv_next = xor i11 %indvars_iv, -1024" [zynqconn/lenet5.cpp:32]   --->   Operation 26 'xor' 'indvars_iv_next' <Predicate = (exitcond3)> <Delay = 0.99> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "br label %1" [zynqconn/lenet5.cpp:32]   --->   Operation 27 'br' <Predicate = (exitcond3)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 3.25>
+ST_4 : Operation 28 [1/1] (0.00ns)   --->   "%idx_2 = phi i11 [ %idx_4, %2 ], [ %idx_1, %.preheader.preheader ]" [zynqconn/lenet5.cpp:39]   --->   Operation 28 'phi' 'idx_2' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%x = phi i6 [ %x_1, %2 ], [ 0, %.preheader.preheader ]"   --->   Operation 29 'phi' 'x' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%x_cast = zext i6 %x to i10" [zynqconn/lenet5.cpp:34]   --->   Operation 30 'zext' 'x_cast' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%empty_137 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 32, i64 32, i64 32)"   --->   Operation 31 'speclooptripcount' 'empty_137' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 32 [1/1] (1.88ns)   --->   "%exitcond = icmp eq i11 %idx_2, %indvars_iv1" [zynqconn/lenet5.cpp:34]   --->   Operation 32 'icmp' 'exitcond' <Predicate = true> <Delay = 1.88> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.88> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 33 [1/1] (1.82ns)   --->   "%x_1 = add i6 %x, 1" [zynqconn/lenet5.cpp:34]   --->   Operation 33 'add' 'x_1' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "br i1 %exitcond, label %3, label %2" [zynqconn/lenet5.cpp:34]   --->   Operation 34 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (1.73ns)   --->   "%tmp = add i10 %tmp_s, %x_cast" [zynqconn/lenet5.cpp:42]   --->   Operation 35 'add' 'tmp' <Predicate = (!exitcond)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_109 = zext i11 %idx_2 to i64" [zynqconn/lenet5.cpp:38]   --->   Operation 36 'zext' 'tmp_109' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%in_V_addr = getelementptr [1024 x i16]* %in_V, i64 0, i64 %tmp_109" [zynqconn/lenet5.cpp:38]   --->   Operation 37 'getelementptr' 'in_V_addr' <Predicate = (!exitcond)> <Delay = 0.00>
+ST_4 : Operation 38 [2/2] (3.25ns)   --->   "%in_V_load = load i16* %in_V_addr, align 2" [zynqconn/lenet5.cpp:38]   --->   Operation 38 'load' 'in_V_load' <Predicate = (!exitcond)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_4 : Operation 39 [1/1] (1.63ns)   --->   "%idx_4 = add i11 %idx_2, 1" [zynqconn/lenet5.cpp:39]   --->   Operation 39 'add' 'idx_4' <Predicate = (!exitcond)> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 40 [1/1] (1.63ns)   --->   "%indvars_iv_next2 = add i11 %indvars_iv1, 32" [zynqconn/lenet5.cpp:33]   --->   Operation 40 'add' 'indvars_iv_next2' <Predicate = (exitcond)> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "br label %.preheader21" [zynqconn/lenet5.cpp:33]   --->   Operation 41 'br' <Predicate = (exitcond)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 6.50>
+ST_5 : Operation 42 [1/1] (0.00ns)   --->   "%tmp_108 = zext i10 %tmp to i64" [zynqconn/lenet5.cpp:42]   --->   Operation 42 'zext' 'tmp_108' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 43 [1/2] (3.25ns)   --->   "%in_V_load = load i16* %in_V_addr, align 2" [zynqconn/lenet5.cpp:38]   --->   Operation 43 'load' 'in_V_load' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_5 : Operation 44 [1/1] (0.00ns)   --->   "%out_V_addr = getelementptr [1024 x i16]* %out_V, i64 0, i64 %tmp_108" [zynqconn/lenet5.cpp:38]   --->   Operation 44 'getelementptr' 'out_V_addr' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 45 [1/1] (3.25ns)   --->   "store i16 %in_V_load, i16* %out_V_addr, align 2" [zynqconn/lenet5.cpp:38]   --->   Operation 45 'store' <Predicate = true> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 16> <Depth = 1024> <RAM>
+ST_5 : Operation 46 [1/1] (0.00ns)   --->   "br label %.preheader" [zynqconn/lenet5.cpp:34]   --->   Operation 46 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvars_iv', zynqconn/lenet5.cpp:32) with incoming values : ('indvars_iv_next', zynqconn/lenet5.cpp:32) [5]  (1.77 ns)
+
+ <State 2>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('indvars_iv1', zynqconn/lenet5.cpp:33) with incoming values : ('indvars_iv_next2', zynqconn/lenet5.cpp:33) ('indvars_iv_next', zynqconn/lenet5.cpp:32) [14]  (1.77 ns)
+
+ <State 3>: 1.83ns
+The critical path consists of the following:
+	'phi' operation ('y') with incoming values : ('y', zynqconn/lenet5.cpp:33) [16]  (0 ns)
+	'add' operation ('y', zynqconn/lenet5.cpp:33) [19]  (1.83 ns)
+
+ <State 4>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('idx_2', zynqconn/lenet5.cpp:39) with incoming values : ('idx', zynqconn/lenet5.cpp:39) ('tmp_54', zynqconn/lenet5.cpp:39) ('idx_4', zynqconn/lenet5.cpp:39) [27]  (0 ns)
+	'getelementptr' operation ('in_V_addr', zynqconn/lenet5.cpp:38) [38]  (0 ns)
+	'load' operation ('in_V_load', zynqconn/lenet5.cpp:38) on array 'in_V' [39]  (3.25 ns)
+
+ <State 5>: 6.51ns
+The critical path consists of the following:
+	'load' operation ('in_V_load', zynqconn/lenet5.cpp:38) on array 'in_V' [39]  (3.25 ns)
+	'store' operation (zynqconn/lenet5.cpp:38) of variable 'in_V_load', zynqconn/lenet5.cpp:38 on array 'out_V' [41]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
